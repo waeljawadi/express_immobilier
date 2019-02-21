@@ -1,5 +1,6 @@
 import React from "react"
 import { Component } from "react"
+import head_logo from '../../assets/pictures/head-logo.png'
 
 import _css_ from "./style/navmenu.module.css"
 
@@ -10,11 +11,9 @@ class Navmenu extends Component {
         <nav
           className={`navbar navbar-expand-lg navbar-light bg-light ${_css_.menu_size}`}
         >
-          <div className="container">
+          <div className={`container ${_css_.noflex}`}>
             <div className="row">
-              {/* <a className="navbar-brand" href="#">
-                Navbar
-              </a> */} 
+           <div className="col-lg-10 col">
               <button
                 className={`navbar-toggler ${_css_.navbartoggler}`}
                 type="button"
@@ -70,6 +69,12 @@ class Navmenu extends Component {
                 </ul>
               </div>
             </div>
+            <div className="col-lg-2 col center">
+             <img src={head_logo}  width="150"/>
+</div>
+            
+            </div>
+            
           </div>
         </nav>
       </React.Fragment>
