@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Slide from './home/slide-home';
-
+import './App.css'
+import Header from './header/header'
 
 
 
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Slide/>
+    <Header/>
       </div>
     );
   }
