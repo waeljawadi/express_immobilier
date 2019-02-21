@@ -1,3 +1,10 @@
+@media (min-width: 992px) {
+  .menu_size * {
+    display: inline-block !important;
+    text-align: center;
+  }
+}
+
 .menu_size {
   font-size: 1.4em;
 }
@@ -9,5 +16,11 @@
 
 .menu_size li a {
   color: black;
+}
+
+@media (min-width: 992px) {
+  .navbartoggler {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=navmenu.module.css.map */

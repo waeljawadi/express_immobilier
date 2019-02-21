@@ -8,17 +8,15 @@ class Navmenu extends Component {
     return (
       <React.Fragment>
         <nav
-          class={`navbar navbar-expand-lg navbar-light bg-light ${
-            _css_.menu_size
-          }`}
+          className={`navbar navbar-expand-lg navbar-light bg-light ${_css_.menu_size}`}
         >
           <div className="container">
             <div className="row">
-              {/* <a class="navbar-brand" href="#">
+              {/* <a className="navbar-brand" href="#">
                 Navbar
-              </a> */}
+              </a> */} 
               <button
-                class="navbar-toggler"
+                className={`navbar-toggler ${_css_.navbartoggler}`}
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarNav"
@@ -26,46 +24,46 @@ class Navmenu extends Component {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon" />
+                <span className="navbar-toggler-icon" />
               </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Home
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Catalogue
                     </a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Vendu
                     </a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Avis Client
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Vendeurs
                     </a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Actualités
                     </a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       Contact
                     </a>
                   </li>
