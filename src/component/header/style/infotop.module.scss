@@ -3,25 +3,17 @@
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: white;
   text-align: center;
   font-size: 1.25em;
-}
-
-@media (max-width: 991px) {
-  .high {
+  @media (max-width: 991px) {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: left;
   }
-}
-
+} 
 .phone,
 .company,
 .users,
@@ -30,13 +22,11 @@
   padding-right: 10px;
   color: #82bb4e;
 }
-
 .link {
   color: white;
+  &:hover {
+    color: #82bb4e;
+    text-decoration: none;
+  }
 }
 
-.link:hover {
-  color: #82bb4e;
-  text-decoration: none;
-}
-/*# sourceMappingURL=header.module.css.map */

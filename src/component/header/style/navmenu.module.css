@@ -1,0 +1,13 @@
+.menu_size {
+  font-size: 1.4em;
+}
+
+.menu_size li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu_size li a {
+  color: black;
+}
+/*# sourceMappingURL=navmenu.module.css.map */
