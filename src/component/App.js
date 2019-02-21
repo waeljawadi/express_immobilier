@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Slide from './home/slide-home';
 
 
 
