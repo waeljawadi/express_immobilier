@@ -12,7 +12,7 @@ class  Search extends Component {
         return (  <div className="find-home">
         <Row className="line1">
             <Col  lg={12} md={12} sm={12} >
-            <h4>Avec Express-Immobilier : " Votre maison, on la voit comme vous " </h4>
+            <h4>Avec Express-Immobilier : " Votre maison, on la voit comme vousbnbnbnbn " </h4>
             </Col>
         </Row>
         <Row className="line2">
