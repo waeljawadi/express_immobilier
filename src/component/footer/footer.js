@@ -7,7 +7,7 @@ class Footer extends Component {
     render() { 
         return ( <div>
             <div className="footprincipal">
-            <div className="row">
+            <div className="row footsecond">
             <div className="col-sm-4 sociallogo">
             <img className="samilogo" src={logosami}/>
             <div className="info">
