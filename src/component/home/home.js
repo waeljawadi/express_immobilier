@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {Component} from 'react'
-import Caroussel from './caroussel'
+import Caroussel from './caroussel/caroussel'
 
 class Home extends Component
 {
