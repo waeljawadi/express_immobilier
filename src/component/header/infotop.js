@@ -19,12 +19,12 @@ class Infotop extends Component {
                 <span>Express Immobilier</span>
               </div>
               <div className="col-lg-3 col-md-6">
-                <i class={`fa fa-envelope ${_css_.envelope}`} />
+                <i className={`fa fa-envelope ${_css_.envelope}`} />
                 contact@expimmo.com
               </div>
               <div className="col-lg-3 col-md-6">
                 <a href="" className={`${_css_.link}`}>
-                  <i class={`fa fa-user ${_css_.users}`} />
+                  <i className={`fa fa-user ${_css_.users}`} />
                   Login or Register
                 </a>
               </div>

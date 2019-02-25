@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+
+import React, { Component } from "react"
+
 import Home from './home/home'
 
 
 
 
+
 import "./App.css"
+
+
 import Header from "./header/header"
 
 import Footer from "./footer/footer"
@@ -15,12 +20,15 @@ class App extends Component {
       <div className="App">
 
         <Header />
-<Home />
+        <Home/>
+
+    
         <Footer />
 
       </div>
     )
   }
 }
+
 
 export default App
