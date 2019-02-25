@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import Slide from './home/slide-home';
-import Footer from './footer/footer';
-import Carreaux from './carreaux/carreaux'
+import React, { Component } from "react"
+import Footer from "./footer/footer"
+import Header from "./header/header"
+import Home from "./home/home"
 
-
+import "./App.css"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <Slide/>
-        <Carreaux/>
-       <Footer/>
+        <Header />
+        <Home />
+        <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

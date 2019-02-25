@@ -1,0 +1,36 @@
+@media (min-width: 992px) {
+  .menu_size * {
+    display: inline-block !important;
+    text-align: center;
+  }
+}
+
+.menu_size {
+  font-size: 1.4em;
+}
+
+.menu_size li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu_size li a {
+  color: black;
+}
+
+@media (min-width: 992px) {
+  .navbartoggler {
+    display: none !important;
+  }
+}
+
+.noflex {
+  display: unset !important;
+}
+
+.navbartoggler {
+  position: relative;
+  top: 20px;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=navmenu.module.css.map */

@@ -1,0 +1,59 @@
+.find-home{
+    background-image: url("../../assets/pictures/slide/hp-hero-desktop.jpg");
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+   
+
+
+}
+
+
+.row.line1 {
+    border-bottom: 2px solid white;
+  
+    padding: 15px;
+}
+
+
+.row.line2 {
+    padding: 19px;
+    
+}
+
+.txtline2{
+    font-size: 15px;
+    color:white;
+    font-weight: bold
+}
+.prix{
+    font-size: 15px;
+font-weight: bold;
+    color: white
+}
+.slogon{
+font-weight: bold;
+    
+       
+      
+        width: 100%;
+        
+        font-family: none;
+        color: white;
+        font-size: 19px;
+    
+}
+
+.form-control-range{
+    margin-top: 15px;
+
+}
+
+.btnsearch{
+    margin-top: 30px;
+    width: 86%;
+}
+
+i.fa.fa-search {
+    margin-right: 5px;
+    
+}

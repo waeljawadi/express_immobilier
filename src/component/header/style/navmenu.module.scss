@@ -1,0 +1,32 @@
+@media (min-width: 992px) {
+  .menu_size * {
+    display: inline-block !important;
+    text-align: center;
+  }
+}
+.menu_size {
+  li {
+    padding-left: 10px;
+    padding-right: 10px;
+    a {
+      color: black;
+    }
+  }
+  font-size: 1.4em;
+}
+
+@media (min-width: 992px) {
+  .navbartoggler {
+    display: none !important;
+  }
+}
+
+.noflex {
+  display: unset !important;
+}
+
+.navbartoggler{
+position: relative;
+top: 20px;
+margin-bottom:20px;
+}
