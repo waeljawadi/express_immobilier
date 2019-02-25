@@ -24,9 +24,9 @@ class Footer extends Component {
                 <div className="col-sm-4 getstared">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Home</a></li>
-                        <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Sign up</a></li>
-                        <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Downloads</a></li>
+                        <li><a href="#"><i className="fa fa-eye" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="#"><i className="fa fa-eye" aria-hidden="true"></i> Sign up</a></li>
+                        <li><a href="#"><i className="fa fa-eye" aria-hidden="true"></i> Downloads</a></li>
                     </ul>
                     <div>
                     <h5>Support</h5>
