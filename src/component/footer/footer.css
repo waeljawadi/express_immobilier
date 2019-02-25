@@ -1,0 +1,134 @@
+.footprincipal {
+    background-color: #3a3f46;
+    color: white;
+   
+}
+
+.row {
+    margin-bottom: 60px;
+}
+.getstared{
+    padding: 3%;
+    color: #9fa3a9
+}
+.contacts{
+    padding: 3%;
+    color: #9fa3a9;
+    font-family: Arial;
+}
+.samilogo{
+    width: 200px;
+    height: 100px;
+    margin: 5%;
+}
+.facebook:hover {
+    color: #0077e2;
+}
+
+.linkedin:hover {
+    color: #ef1a1a;
+}
+
+.twitter:hover {
+    color: #00aced;
+}
+.instagram:hover {
+    color: orangered;
+}
+
+.info{
+    text-align: justify; 
+    color: #afb0b1;
+    margin: 3%;
+}
+
+.footprincipal ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+.footprincipal h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.logo{
+    margin-top: 10px;
+}
+
+
+
+
+.footprincipal a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+.getstared a:hover,
+.getstared a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.second-bar {
+    justify-content: center;
+    align-items: center;
+    background-color: #33373e;
+    font-size: 15px;
+    
+    height: 80px;
+}
+
+
+.second-bar a:hover {
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+.footprincipal {
+        text-align: center;
+    }
+
+.info{
+        text-align: center;
+    }
+}
+
+
+
+.html{
+    height: 100%;
+}
+
+.body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+.footprincipal{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
