@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Row,Col} from  "react-bootstrap";
+import {Row,Col, Container} from  "react-bootstrap";
+import  './search.css';
 
 
 
@@ -9,54 +10,61 @@ class  Search extends Component {
         this.state = {  }
     }
     render() { 
-        return (  <div className="find-home">
-        <Row className="line1">
-            <Col  lg={12} md={12} sm={12} >
-            <h4>Avec Express-Immobilier : " Votre maison, on la voit comme vousbnbnbnbn " </h4>
-            </Col>
-        </Row>
-        <Row className="line2">
-            <Col className="type" lg={4} md={4} sm={12} >
+        return (  <div className="find-home container-fluid">
+
+          <div className="row line1">
+          <div className="col-lg-12 col-md-12 col-sm-12 slog">
+          <p className="slogon">Avec Express-Immobilier : " Votre maison, on la voit comme vous " </p>
+          </div>
+          </div>
+
+
+          <div className="row line2">
+
+          <div className="col-lg-3 col-md-12 col-sm-12">
+          <p className="txtline2">Type:</p>
             <select className="form-control">
             <option>Maison</option>
             <option>Terrain</option>
             <option>Maison & Terrain</option>
             </select>
-            </Col>
+          </div>
 
-            <Col className="prix" lg={4} md={4} sm={12}>
+          <div className="col-lg-3 col-md-12 col-sm-12">
+          <p className="txtline2">Surface en mètre carré:</p>
+            <select className="form-control">
+            <option>Choisir la surface</option>
+            <option>100</option>
+            <option>150</option>
+            <option>200</option>
+            </select>
+            </div>
 
+            <div className="col-lg-3 col-md-12 col-sm-12">
+            
             <form>
             <div class="form-group">
-            <label for="formControlRange">Prix:</label>
-            <input type="range" class="form-control-range" id="formControlRange"/>
+            <label className="prix" for="formControlRange">Prix:</label>
+            <input type="range"  class="form-control-range" id="formControlRange"/>
            </div>
            </form>
+            </div>
 
-            </Col>
-            
-            <Col className="btn-search" lg={4} md={4} sm={12}>
-            <button type="button" className="btn btn-secondary btn-lg"><i class="fa fa-search"></i>Search</button>
-             
-
-            </Col>
-
+            <div className="col-lg-3 col-md-12 col-sm-12">
+            <button type="button" className="btn btn-success btn-lg btnsearch"><i class="fa fa-search"></i>SEARCH</button>
+            </div>
+   
+            </div>
 
 
-
-
-
-
-           </Row>
 
           
 
 
 
 
-    
-
-
+        
+        
 
         </div>);
     }
