@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import "./paralax.css"
-import logo1 from "../../assets/pictures/head-logo.png"
 class Paralax extends Component {
   constructor(props) {
     super(props)

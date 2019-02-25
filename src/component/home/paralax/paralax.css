@@ -1,5 +1,5 @@
 .parralax {
-  background-image: url("../../assets/pictures/slide/imgparalax.jpg");
+  background-image: url("../../../assets/pictures/slide/imgparalax.jpg");
   min-height: 500px;
   background-attachment: fixed;
   display: flex;

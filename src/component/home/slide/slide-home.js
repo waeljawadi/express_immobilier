@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import image1 from '../../assets/pictures/slide/image4.jpg';
-import image2 from '../../assets/pictures/slide/image2.jpg';
-import image3 from '../../assets/pictures/slide/image1.jpg';
-import image4 from '../../assets/pictures/slide/image3.jpg';
-import image5 from '../../assets/pictures/slide/kontakt.jpg';
+import image1 from '../../../assets/pictures/slide/image4.jpg';
+import image2 from '../../../assets/pictures/slide/image2.jpg';
+import image3 from '../../../assets/pictures/slide/image1.jpg';
+import image4 from '../../../assets/pictures/slide/image3.jpg';
+import image5 from '../../../assets/pictures/slide/kontakt.jpg';
 class Slide extends Component {
     constructor(props) {
         super(props);
