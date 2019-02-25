@@ -1,59 +1,64 @@
-.find-home{
-    background-image: url("../../assets/pictures/slide/hp-hero-desktop.jpg");
-    border-right: 1px solid white;
-    border-left: 1px solid white;
-   
+.find-home {
+  background-color: #333 !important;
 
-
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+  background: #7d7e7d; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #7d7e7d 0%,
+    #0e0e0e 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #7d7e7d 0%,
+    #0e0e0e 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #7d7e7d 0%,
+    #0e0e0e 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 }
-
-
 .row.line1 {
-    border-bottom: 2px solid white;
-  
-    padding: 15px;
+  border-bottom: 1px solid #28a745;
+  padding: 5px;
+  text-align: center;
 }
-
-
 .row.line2 {
-    padding: 19px;
-    
+  padding: 19px;
+  margin: 0 auto;
 }
-
-.txtline2{
-    font-size: 15px;
-    color:white;
-    font-weight: bold
+.txtline2 {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
 }
-.prix{
-    font-size: 15px;
-font-weight: bold;
-    color: white
+.prix {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
 }
-.slogon{
-font-weight: bold;
-    
-       
-      
-        width: 100%;
-        
-        font-family: none;
-        color: white;
-        font-size: 19px;
-    
+.slogon {
+  font-weight: bold;
+  width: 100%;
+  font-family: none;
+  color: white;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin: 0px;
+  height: 50px;
 }
-
-.form-control-range{
-    margin-top: 15px;
-
+.form-control-range {
+  margin-top: 15px;
 }
-
-.btnsearch{
-    margin-top: 30px;
-    width: 86%;
+.btnsearch {
+  margin-top: 30px;
+  width: 86%;
 }
-
 i.fa.fa-search {
-    margin-right: 5px;
-    
+  margin-right: 5px;
 }
