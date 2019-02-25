@@ -1,4 +1,8 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
+import Home from './home/home'
+
+
+
 
 import "./App.css"
 import Header from "./header/header"
@@ -9,9 +13,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
 
+        <Header />
+<Home />
         <Footer />
+
       </div>
     )
   }
