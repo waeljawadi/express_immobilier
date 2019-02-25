@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
-import Slide from './slide-home';
-import Search from './search'
-import Paralax from './paralax';
-import Caroussel from './caroussel/caroussel'
-import Carreaux from './carreaux/carreaux'
-
+import React, { Component } from "react"
+import Slide from "./slide-home"
+import Search from "./search"
+import Paralax from "./paralax"
+import Caroussel from "./caroussel/caroussel"
+import Carreaux from "./carreaux/carreaux"
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return (  <div>
-            <Slide/>
-          
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  render() {
+    return (
+      <div>
+        <Slide />
+        <Search />
         <Carreaux />
-            <Search/>
-            <Caroussel/>
-            <Paralax/>
-
-
-            
-        </div>);
-    }
+        <Caroussel />
+        <Paralax />
+      </div>
+    )
+  }
 }
- 
-export default Home;
-
-
-
-
+export default Home
