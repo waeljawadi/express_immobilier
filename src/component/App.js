@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './home/slide-home';
+import Search from './home/search';
 
 
 
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <div className="App">
        <Slide/>
+       <Search/>
       </div>
     );
   }
