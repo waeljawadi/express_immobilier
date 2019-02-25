@@ -11,11 +11,6 @@ import Home from './home/home'
 
 import "./App.css"
 
-
-import Header from "./header/header"
-
-import Footer from "./footer/footer"
-
 class App extends Component {
   render() {
     return (
