@@ -1,5 +1,7 @@
+import React, { Component } from 'react';
+import Header from "./header/header"
 
-import React, { Component } from "react"
+import Footer from "./footer/footer"
 
 import Home from './home/home'
 
