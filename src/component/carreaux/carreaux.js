@@ -8,20 +8,27 @@ class Carreaux extends Component {
     state = {  }
     render() { 
         return ( <div className="row carreaux">
-        <div className="col-sm-3 carreaux1">
+        <div className="col-sm-12 col-md-12 col-lg-4">
+<div className="carreaux1">
         <img className="imgcarreaux" src={submission01}/>
         <h4>Login</h4>
         <p>Login to your account</p>
         </div>
-        <div className="col-sm-3 carreaux2">
+        </div>
+        <div className="col-sm-12 col-md-12 col-lg-4">
+        <div className="carreaux1">
         <img className="imgcarreaux" src={submission02}/>
         <h4>Soumettre</h4>
         <p>Submit your properties</p>
         </div>
-        <div className="col-sm-3 carreaux2">
+        </div>
+
+        <div className="col-sm-12 col-md-12 col-lg-4">
+        <div className="carreaux1">
         <img className="imgcarreaux" src={submission03}/>
         <h4>Publish</h4>
         <p>Publish professional and private <br/>real estate listings</p>
+        </div>
         </div>
 
         </div> );
