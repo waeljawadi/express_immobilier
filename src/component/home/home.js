@@ -16,9 +16,14 @@ class Home extends Component {
             <Caroussel/>
             <Paralax/>
 
+
             
         </div>);
     }
 }
  
 export default Home;
+
+
+
+
