@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slide from './home/slide-home';
-import Footer from './footer/footer'
-
+import Footer from './footer/footer';
+import Carreaux from './carreaux/carreaux'
 
 
 
@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
        <Slide/>
+        <Carreaux/>
        <Footer/>
       </div>
     );

@@ -1,0 +1,41 @@
+.carreaux{
+    height: 350px;
+    
+   
+}
+.carreaux1{
+    background-color: #dfe6e7;
+    
+    height: 350px;
+   margin-bottom: 5%;
+    margin-left: 6%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+ 
+  justify-content: space-around;
+}
+
+.carreaux2{
+    background-color: #dfe6e7;
+    margin-bottom: 5%;
+    height: 350px;
+   margin-right: 2%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+ 
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 767px) {
+
+    .carreaux{
+        height: 100%;
+        
+       
+    }
+
+}
