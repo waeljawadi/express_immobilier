@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import Slide from './home/slide-home';
-import Search from './home/search';
+import Home from './home/home'
 
 
+import React, { Component } from "react"
 
 
+import "./App.css"
+import Header from "./header/header"
+
+import Footer from "./footer/footer"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <Slide/>
-       <Search/>
+
+        <Header />
+<Home />
+        <Footer />
+
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

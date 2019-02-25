@@ -1,0 +1,32 @@
+.high {
+  background: black;
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 1.25em;
+  @media (max-width: 991px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+} 
+.phone,
+.company,
+.users,
+.envelope {
+  color: white;
+  padding-right: 10px;
+  color: #82bb4e;
+}
+.link {
+  color: white;
+  &:hover {
+    color: #82bb4e;
+    text-decoration: none;
+  }
+}
+
