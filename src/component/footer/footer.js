@@ -6,7 +6,7 @@ class Footer extends Component {
     state = {  }
     render() { 
         return ( <div>
-            <div className="container">
+            <div className="footprincipal">
             <div className="row">
             <div className="col-sm-4 sociallogo">
             <img className="samilogo" src={logosami}/>
