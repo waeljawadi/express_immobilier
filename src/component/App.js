@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-
 import "./App.css"
+import Home from './home/home'
+
 import Header from "./header/header"
 
 import Footer from "./footer/footer"
@@ -10,11 +11,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
+        <Home/>
         <Footer />
       </div>
     )
   }
 }
+
 
 export default App
