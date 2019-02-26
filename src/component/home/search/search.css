@@ -21,7 +21,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 }
 .row.line1 {
-  border-bottom: 1px solid #28a745;
+  border-bottom: 1px solid #83bb4d;
   padding: 5px;
   text-align: center;
 }
@@ -61,4 +61,8 @@
 }
 i.fa.fa-search {
   margin-right: 5px;
+}
+
+button.btn.btn-success.btn-lg.btnsearch {
+  background-color: #83bb4d;
 }
