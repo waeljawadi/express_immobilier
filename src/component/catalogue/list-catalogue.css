@@ -1,0 +1,31 @@
+.row.ctlg {
+    margin-top: 56px;
+    margin-left: 6px
+}
+
+.toplist {
+    margin-top: 51px;
+}
+
+p.recent {
+    font-weight: bold;
+    color: #17d2c1;
+    font-size: 15px;
+}
+p.properties {
+    font-size: 41px;
+    margin-top: -12px
+}
+p.check {
+    font-size: 13px;
+    color: #b1abab;
+    font-weight: bold;
+}
+.row.ctlg.container-fluid {
+    margin-top: -50px;
+    padding: 79px;
+}
+body {
+    background-color: #eae6e647;
+    
+}
