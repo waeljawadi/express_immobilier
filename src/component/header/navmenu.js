@@ -3,6 +3,7 @@ import { Component } from "react"
 import head_logo from "../../assets/pictures/head-logo.png"
 
 import _css_ from "./style/navmenu.module.css"
+import { Link } from 'react-router-dom'
 
 class Navmenu extends Component {
   render() {
@@ -32,15 +33,16 @@ class Navmenu extends Component {
                     <nav className={`${_css_.cl_effect}`}>
                       <ul className="navbar-nav">
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
+                          <Link  to='/' className="nav-link">
                             Home
-                          </a>
+                          </Link>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
+                          <Link  to='/listecatalogue' className="nav-link">
                             Catalogue
-                          </a>
+                          </Link>
                         </li>
+                       
                         <li className="nav-item">
                           <a className="nav-link" href="#">
                             Vendu
