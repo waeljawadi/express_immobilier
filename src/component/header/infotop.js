@@ -1,6 +1,8 @@
 import React from "react"
 import { Component } from "react"
 
+import { Link } from "react-router-dom"
+
 import _css_ from "./style/infotop.module.css"
 
 class Infotop extends Component {
@@ -25,7 +27,7 @@ class Infotop extends Component {
               <div className="col-lg-3 col-md-6">
                 <a href="" className={`${_css_.link}`}>
                   <i className={`fa fa-user ${_css_.users}`} />
-                  Login or Register
+                  <Link to='/login'>Login</Link> or <Link to='/register'>Register</Link>
                 </a>
               </div>
             </div>
