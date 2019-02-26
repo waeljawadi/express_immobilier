@@ -1,0 +1,88 @@
+@media (min-width: 992px) {
+  .menu_size * {
+    display: inline-block !important;
+    text-align: center;
+  }
+}
+.menu_size {
+  li {
+   
+    a {
+      color: black;
+    }
+  }
+  font-size: 1.4em;
+}
+
+@media (min-width: 992px) {
+  .navbartoggler {
+    display: none !important;
+  }
+}
+
+.noflex {
+  display: unset !important;
+}
+
+.navbartoggler{
+position: relative;
+left: 15px;
+}
+
+nav a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size:1em;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+
+/* Effect 1: Brackets */
+.cl_effect a::before,
+.cl_effect a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl_effect a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl_effect a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl_effect a:hover::before,
+.cl_effect a:hover::after,
+.cl_effect a:focus::before,
+.cl_effect a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+ 
+// .cl_effect ul li{
+//   padding-top: 0px !important;
+//   padding-bottom: 0px !important;
+// }

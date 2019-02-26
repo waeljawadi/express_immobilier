@@ -1,0 +1,60 @@
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+.owl-prev {
+  left: -2rem;
+}
+.owl-next {
+  right: -2rem;
+}
+.owl-prev,
+.owl-next {
+    font-size: 5em !important;
+    color: #83bb4d !important;
+}
+.owl-theme .owl-nav [class*="owl-"]:hover {
+    background: unset;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    font-size: 5em !important;
+    color: #000000 !important;
+}
+
+.widget-title.text-center
+{
+    color: #333;
+text-transform: uppercase;
+font-size: 30px;
+text-align: center;
+position: relative;
+z-index: 7;
+line-height: 1.1;
+}
+
+.widget-title.text-center span
+{
+display: inline-block;
+position: relative;
+padding-bottom: 20px;
+margin-bottom: 20px;
+}
+
+
+.widget-title.text-center span::after
+{
+content: "";
+background-color: #83bb4d;
+width: 70px;
+height: 2px;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+margin: 0 auto;
+}
+
