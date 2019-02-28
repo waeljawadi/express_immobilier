@@ -54,9 +54,9 @@ class Navmenu extends Component {
                           </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
-                            Actualités
-                          </a>
+                          <Link  to='/listeactualite' className="nav-link">
+                            Actualité
+                          </Link>
                         </li>
                         <li className="nav-item">
                           <a className="nav-link" href="#">

@@ -25,10 +25,11 @@ class Infotop extends Component {
                 contact@expimmo.com
               </div>
               <div className="col-lg-3 col-md-6">
-                <a href="" className={`${_css_.link}`}>
+                <span className={`${_css_.link}`}>
                   <i className={`fa fa-user ${_css_.users}`} />
-                  <Link to='/login'>Login</Link> or <Link to='/register'>Register</Link>
-                </a>
+                  <Link className="link"  to='/login'>Login</Link> or <Link className="link" 
+                   to='/register'>Register</Link>
+                </span>
               </div>
             </div>
           </div>

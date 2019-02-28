@@ -6,6 +6,7 @@ import Footer from "../footer/footer"
 import Header from "../header/header"
 import Login from "../login/login"
 import Register from '../register/register'
+import ListeActualite from "../actualité/list-actualite";
 class Router extends Component {
   constructor(props) {
     super(props)
@@ -17,6 +18,7 @@ class Router extends Component {
         <Route path="/" component={Header} />
         <Route exact path="/" component={Home} />
         <Route exact path="/listecatalogue" component={ListeCatalogue} />
+        <Route exact path="/listeactualite" component={ListeActualite} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route path="/" component={Footer} />

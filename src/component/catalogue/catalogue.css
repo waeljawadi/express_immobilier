@@ -126,4 +126,5 @@ transition: 500ms;
 
   button.btn.btn-success.open {
     background-color: #83bb4d;
+    border: none
 }

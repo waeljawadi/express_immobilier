@@ -35,8 +35,7 @@
   color: white;
 }
 
-.link:hover {
-  color: #82bb4e;
-  text-decoration: none;
+.link:active {
+  color: white;
 }
 /*# sourceMappingURL=infotop.module.css.map */
