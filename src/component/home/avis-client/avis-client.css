@@ -1,0 +1,50 @@
+p.p1avis {
+    font-size: 31px;
+    font-weight: bold;
+    margin-top: 63px;
+}
+
+p.p2avis {
+    color: #83bb4d;
+    font-size: 15px;
+    margin-left: 9px;
+}
+img.imgavis {
+    width: 100%;
+}
+/* button.btn.btn-success.btnavis {
+    position: relative;
+    left: 582px;
+    bottom: 40%;
+    width: 16%;
+    background-color: #83bb4d;
+    border: none;
+} */
+
+button.btn.btn-success.btnavis {
+    width: 18%;
+    left: 42%;
+    position: absolute;
+    top: 59%;
+    background-color: #83bb4d;
+    border: none;
+}
+img.imgavis {
+    position: relative;
+    
+}
+@media only screen and (max-width: 576px) {
+    button.btn.btn-success.btnavis {
+        width: 18%;
+        font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    button.btn.btn-success.btnavis {
+        width: 23%;
+        font-size: 9px;
+        margin-left: -8px;
+    }
+  }
+  
