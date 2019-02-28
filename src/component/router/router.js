@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 import ListeCatalogue from '../catalogue/liste-catalogue';
 import Footer from '../footer/footer'
 import Header from '../header/header'
+import Contact from '../contact/contact'
 class Router extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,8 @@ class Router extends Component {
 <Route  path='/' component={Header}/> 
 <Route exact path='/' component={Home}/> 
 <Route exact path='/listecatalogue' component={ListeCatalogue}/> 
+<Route exact path='/contact' component={Contact}/> 
+
 <Route  path='/' component={Footer}/> 
 
         </div> );

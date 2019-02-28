@@ -1,0 +1,51 @@
+.form-control:focus {
+    border-color:  greenyellow;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px greenyellow;
+}
+.titrecontact{
+    text-align: center;
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.boutcontact{
+    margin: 5%;
+}
+.mapcont{
+    background-color: darkgray;
+    border-radius: 30% 0 0 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+
+}
+.maincontact{
+    width: 80%;
+    margin: 0 auto;
+    
+    
+}
+.seccont{
+    background-color: white;
+    
+    border-radius: 0 30% 30% 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.backcontact{
+    background-color: black;
+
+}
+
+
+@media screen and (max-width: 990px) {
+.seccont{
+    border-radius: 0;
+}
+.mapcont{
+    border-radius: 0;
+}
+.maincontact{
+    width: 100%;
+}
+
+}
