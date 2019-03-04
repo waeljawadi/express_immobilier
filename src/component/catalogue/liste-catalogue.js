@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Catalogue from './catalogue'
 import './list-catalogue.css'
+import SearchPage from './search-catalogue';
 
 
 const tab=[
@@ -153,10 +154,7 @@ class ListeCatalogue extends Component {
         return ( <div className="toplist">
             <div>
             <center>
-           
-                <p className="recent">Recent</p>
-                <p className="properties">Properties</p>
-                <p className="check">Check out some of our latest properties.</p>
+                <SearchPage/>
             </center>
             </div>
              <div className="row ctlg container-fluid">

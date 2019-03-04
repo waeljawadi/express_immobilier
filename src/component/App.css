@@ -12,7 +12,7 @@ font-size: 12px;
 .App
 {
     overflow: hidden;
-    background: url('../assets/pictures/background.jpg');
+    background: white;
     background-size: cover;
 }
 

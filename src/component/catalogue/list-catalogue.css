@@ -1,7 +1,4 @@
-.row.ctlg {
-    margin-top: 56px;
-    margin-left: 6px
-}
+
 
 .toplist {
     margin-top: 51px;
@@ -28,4 +25,9 @@ p.check {
 body {
     background-color: #eae6e647;
     
+}
+
+i.fa.fa-search {
+    color: #83bb4d;
+    font-size: 19px;
 }

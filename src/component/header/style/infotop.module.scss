@@ -23,10 +23,11 @@
   color: #82bb4e;
 }
 .link {
-  color: white;
-  &:hover {
-    color: #82bb4e;
-    text-decoration: none;
+ color:white;
+  
+  &:visited {
+   
+    color:white;
   }
 }
 

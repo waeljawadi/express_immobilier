@@ -1,0 +1,42 @@
+.card {
+    margin-top: 25px;
+    background-color: white;
+    box-shadow:0 20px 50px 0 rgba(0,0,0,.13);
+}
+
+p.card-text.descriptionactu {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label.tag {
+    position: relative;
+    border: 1px solid #83bb4d;
+    background: #83bb4d;
+    color: white;
+    width: 72px;
+    height: 24px;
+    text-align: center;
+    
+    padding: 2px;
+    top: -44px;
+    right: 20px;
+}
+.dateactu{
+    color:#83bb4d;
+}
+
+p.card-text.descriptionactu {
+    margin-top: -50px;
+}
+p.card-text.dateactu {
+    margin-top: -12px;
+}
+p.card-text.descriptionactu {
+    padding-top: 12px;
+}
+
+.row.ctlg {
+    margin-top: 56px;
+    margin-left: 6px
+}
