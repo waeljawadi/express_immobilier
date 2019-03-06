@@ -4,11 +4,18 @@ import "./contact.css"
 
 class Contact extends Component {
     state = {  }
+    componentDidMount() {
+      const map = new window.google.maps.Map(document.getElementById('map'), {
+        center: { lat: 35.8575044, lng: 10.6085306 },
+        zoom: 16
+      });
+    }
     render() { 
-        return ( <div className="backcontact">
+        return ( 
            <div className="row maincontact">
            <div className="col-sm-12 col-md-12 col-lg-6 mapcont">
-            <h1>MAP</h1>
+           
+            <div className="col-sm-12 col-md-12 col-lg-12 mapcont2" id="map"></div>
           </div>
            <div className="col-sm-12 col-md-12 col-lg-6 seccont">
            <h1 className="titrecontact">Contactez-nous</h1>
@@ -30,12 +37,12 @@ class Contact extends Component {
     <textarea className="form-control border-top-0 border-left-0 border-right-0" rows="5" id="comment" placeholder="Entrée votre message" required></textarea>
   </div>
   <div className="col-10 text-center boutcontact">
-  <button type="submit" className="btn btn-secondary">Envoyer</button>
+  <button type="submit" className="btn btn-lg btn-secondary">Envoyer</button>
   </div>
 </form>
 </div>
 
-</div>
+
             
             
 

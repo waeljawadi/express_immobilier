@@ -3,33 +3,44 @@
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px greenyellow;
 }
 .titrecontact{
-    text-align: center;
-    margin: 5%;
-    font-family: Arial, Helvetica, sans-serif;
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+   font: bold;
 }
 .boutcontact{
     margin: 5%;
 }
+.boutcontact button{
+    border-radius: 50px;
+    width: 200px;
+    background-color: #28a745;
+}
 .mapcont{
-    background-color: darkgray;
-    border-radius: 30% 0 0 30%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    background-color: white;
+    
     text-align: center;
 
 }
-.maincontact{
-    width: 80%;
-    margin: 0 auto;
-    
-    
+.mapcont2{
+    width: 100%;
+    height: 100%;
 }
+/* .maincontact{
+    width: 80%;
+    margin: 0 auto; */
+    
+    
+
 .seccont{
     background-color: white;
+    text-align: left;
+    align-items: left;
     
-    border-radius: 0 30% 30% 0;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  
+}
+.seccont h1{
+    text-align: left;
 }
 .backcontact{
     background-color: black;
@@ -44,8 +55,9 @@
 .mapcont{
     border-radius: 0;
 }
-.maincontact{
-    width: 100%;
+.mapcont2{
+    height: 500px;
+}
 }
 
-}
+
