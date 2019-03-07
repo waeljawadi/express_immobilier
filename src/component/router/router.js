@@ -12,6 +12,10 @@ import Reservation from "../reservation/reservation"
 
 
 
+
+
+import Admin from '../admin/admin'
+
 class Router extends Component {
   constructor(props) {
     super(props)
@@ -31,6 +35,10 @@ class Router extends Component {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route path="/" component={Footer} />
+
+<Route path="/admin" exact component={Admin} />
+
+
       </React.Fragment>
     )
   }
