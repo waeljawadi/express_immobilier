@@ -1,0 +1,116 @@
+
+
+.ligne1res {
+    text-align: center;
+    margin-top: 64px;
+
+}
+
+img.imgreservation {
+    width: 83%;
+    height: 362px;
+    position:relative;
+}
+.ligne2res {
+    margin-top: 70px;
+    margin-left: 75px;
+}
+
+
+
+
+p.prxvilla {
+    color: #24a89c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+p.adresvilla {
+    margin-top: 15px;
+    
+}
+p.titrvilla {
+    font-size: 23px;
+    font-weight: bold;
+}
+p.adresvilla {
+    font-size: 13px;
+    color: #83bb4d;
+    font-weight: bold;
+}
+
+.ligne3 {
+    margin-left: 75px;
+    width: 83%;
+    margin-top: 23px;
+}
+
+p.parag1res {
+    text-align: justify;
+    color: #c1c0c0;
+    font-size: 13px
+
+}
+
+.ligne4 {
+    margin-left: 73px;
+    width: 84%;
+    margin-top: 49px;
+}
+p.pdetails {
+    font-weight: 600;
+    font-size: 13px;
+    color: #aab1b0;
+}
+
+p.detaisres {
+    font-size: 15px;
+    font-weight: bold;
+}
+label.prixdet {
+    color: #83bb4d;
+}
+label.surfacedet {
+    color: #83bb4d;
+}
+label.adressedet {
+    color: #83bb4d;
+}
+i.fa.fa-check {
+    padding: 2px;
+    color: #83bb4d;
+}
+
+.map{
+
+    width: 100px;
+    height: 100px;
+}
+
+
+p.mapres {
+    font-weight: bold;
+   
+    font-size: 15px;
+}
+
+
+.ligne5 {
+    margin-left: 72px;
+    width: 84%;
+    margin-top: 27px;
+}
+div#map {
+    height: 451px;
+    width: 100%;
+}
+
+
+.col-lg-8.col-md-12.col-sm-12.part1 {
+    padding: 10px;
+}
+
+.imgres{
+    width: 100%;
+    opacity: 0.7
+}

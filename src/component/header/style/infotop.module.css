@@ -35,7 +35,15 @@
   color: white;
 }
 
-.link:active {
+.link:visited {
+  color: white;
+}
+
+#login {
+  color: white;
+}
+
+#registeruser {
   color: white;
 }
 /*# sourceMappingURL=infotop.module.css.map */
