@@ -11,6 +11,10 @@ import Avis from "../avis/avis"
 import Reservation from "../reservation/reservation"
 import Admin from "../administration/admin"
 import Nhnf from "../administration/nhnf"
+
+import Catalogue from '../administration/catalogue/catalgoue'
+import Ajout from '../administration/catalogue/ajout/ajout'
+
 class Router extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +22,7 @@ class Router extends Component {
   }
   render() {
     let check_if_admin = false
-    window.location.href.indexOf("admin") != -1
+    window.location.href.indexOf("/admin") != -1
       ? (check_if_admin = true)
       : (check_if_admin = false)
     let header
@@ -38,7 +42,14 @@ class Router extends Component {
         <Route exact path="/listeactualite" component={ListeActualite} />
         <Route exact path="/avis" component={Avis} />
         <Route exact path="/reservation" component={Reservation} />
-        <Route exact path="/admin" component={Admin} />
+        <Route  path="/admin" component={Admin} />
+
+<Route exact path="/admin/catalogue" component={Catalogue} />
+<Route exact path="/admin/catalogue/ajout" component={Ajout} />
+
+
+
+
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />

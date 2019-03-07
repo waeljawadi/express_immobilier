@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 
+
+import {Link} from 'react-router-dom'
 import _css_ from './style/style.module.css'
 
 
 export default class SideBar extends Component {
     render(){
         return (
-            <aside className="main-sidebar">
-                <section className="sidebar">
+            <aside className={`main-sidebar  ${_css_.fixit}`}>
+                <section className={`sidebar`}>
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="img/male-user-png-image-3098.png" className="img-circle" alt="User Image" />
+                            <img src="/img/male-user-png-image-3098.png" className="img-circle" alt="User Image" />
                         </div>
                         <div className="pull-left info">
                             <p>Administrateur</p>
@@ -39,10 +41,10 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-circle-o"></i> Ajouter</a></li>
+                            <li><Link to="/admin/catalogue/ajout"><i className="fa fa-circle-o"></i> Ajouter</Link></li>
                             <li><a href="pages/charts/morris.html"><i className="fa fa-circle-o"></i> Modifier</a></li>
                             <li><a href="pages/charts/flot.html"><i className="fa fa-circle-o"></i> Configurer</a></li>
-                            <li><a href="pages/charts/inline.html"><i className="fa fa-circle-o"></i> Liste des catalogues</a></li>
+                            <li><Link to="/admin/catalogue"><i className="fa fa-circle-o"></i> Liste des catalogues</Link></li>
                         </ul>
                         </li>
 
