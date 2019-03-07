@@ -27,8 +27,8 @@ class Infotop extends Component {
               <div className="col-lg-3 col-md-6">
                 <span className={`${_css_.link}`}>
                   <i className={`fa fa-user ${_css_.users}`} />
-                  <Link className="link"  to='/login'>Login</Link> or <Link className="link" 
-                   to='/register'>Register</Link>
+                  <Link className="link"  to='/login' id="login">Login</Link> or <Link className="link" 
+                   to='/register'  id="registeruser">Register</Link>
                 </span>
               </div>
             </div>
