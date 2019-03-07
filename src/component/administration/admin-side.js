@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import _css_ from './style/style.module.css'
+
+
 export default class SideBar extends Component {
     render(){
         return (
@@ -14,7 +17,7 @@ export default class SideBar extends Component {
                             <a href="#"><i className="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
-                    <form action="#" method="get" className="sidebar-form">
+                    {/* <form action="#" method="get" className="sidebar-form">
                         <div className="input-group">
                         <input type="text" name="q" className="form-control" placeholder="Search..." />
                         <span className="input-group-btn">
@@ -22,7 +25,7 @@ export default class SideBar extends Component {
                                 </button>
                             </span>
                         </div>
-                    </form>
+                    </form> */}
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">MAIN NAVIGATION</li>
                         
