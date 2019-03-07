@@ -8,12 +8,9 @@ class Admin extends Component {
     }
     render() { 
         return ( <div>
-
-
              <Header/>
             <SideBar/>
         </div> );
     }
 }
- 
 export default Admin;
