@@ -12,8 +12,17 @@ import Reservation from "../reservation/reservation"
 import Admin from "../administration/admin"
 import Nhnf from "../administration/nhnf"
 
-import Catalogue from '../administration/catalogue/catalgoue'
+import Listimmo from '../administration/catalogue/list/listimmo'
 import Ajout from '../administration/catalogue/ajout/ajout'
+import Config from '../administration/catalogue/config/config'
+
+
+import Listuser from '../administration/user/list/listuser'
+
+import Attenteuser from '../administration/user/attente/attenteuser'
+
+
+
 
 class Router extends Component {
   constructor(props) {
@@ -44,10 +53,13 @@ class Router extends Component {
         <Route exact path="/reservation" component={Reservation} />
         <Route  path="/admin" component={Admin} />
 
-<Route exact path="/admin/catalogue" component={Catalogue} />
-<Route exact path="/admin/catalogue/ajout" component={Ajout} />
+        <Route exact path="/admin/catalogue/listimmo" component={Listimmo} />
+        <Route exact path="/admin/catalogue/ajout" component={Ajout} />
+        <Route exact path="/admin/catalogue/config" component={Config} />
 
 
+        <Route exact path="/admin/user/listuser" component={Listuser} />
+        <Route exact path="/admin/user/attenteuser" component={Attenteuser} />
 
 
 
