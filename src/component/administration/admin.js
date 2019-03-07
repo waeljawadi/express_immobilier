@@ -10,7 +10,7 @@ class Admin extends Component {
         return ( <div>
 
 
-   <Header/>
+             <Header/>
             <SideBar/>
         </div> );
     }

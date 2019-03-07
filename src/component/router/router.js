@@ -38,7 +38,6 @@ class Router extends Component {
         <Route exact path="/register" component={Register} />
         <Route path="/" component={Footer} />
 
-<Route path="/admin" exact component={Admin} />
 
 
       </React.Fragment>
