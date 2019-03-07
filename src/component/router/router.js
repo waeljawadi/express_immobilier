@@ -15,7 +15,6 @@ import Admin from "../administration/admin";
 
 
 
-import Admin from '../admin/admin'
 
 class Router extends Component {
   constructor(props) {
