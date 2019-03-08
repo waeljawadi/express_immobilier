@@ -1,0 +1,11 @@
+.navitemedit {
+  font-size: 1.3em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: red !important;
+}
+
+.navitemedit a {
+  color: #8c969b;
+}
+/*# sourceMappingURL=style.module.css.map */
