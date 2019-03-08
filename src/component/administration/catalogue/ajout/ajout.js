@@ -110,7 +110,7 @@ class Ajout extends Component {
                   <div className="row">
                   <div className="col-half">
                   <div className="input-group input-group-icon">
-                      <input className="form-control" type="date"  placeholder="ggg" name="date_construction" />
+                      <input  type="date" name="date_construction" />
 
                         <div className="input-icon">
                           <i className="fa fa-user" />
@@ -119,15 +119,33 @@ class Ajout extends Component {
 </div>
 
 <div className="col-half">
+
+
+
+
+<div className="input-group input-group-icon">
+   <select>
+     <option>Maison</option>
+     <option>Appartement</option>
+     <option>Villa</option>
+   </select>
+   <div className="input-icon">
+                          <i className="fa fa-user" />
+                        </div>
+</div>
+
+
+
+
+
+
+
                   </div>
 </div>
 
                 </form>
               </div>
-              {this.state.prix}
-              {this.state.surface}
-
-            
+              
 
 
 
@@ -138,6 +156,11 @@ class Ajout extends Component {
 
             <TabPanel>dfgdfg</TabPanel>
           </Tabs>
+
+          <button type="button" class="btn btn-success">Ajouter immobilier</button>
+
+
+
         </div>
       </React.Fragment>
     )
