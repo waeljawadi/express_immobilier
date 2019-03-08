@@ -18,7 +18,6 @@ import Config from '../administration/catalogue/config/config'
 
 
 import Listuser from '../administration/user/list/listuser'
-
 import Attenteuser from '../administration/user/attente/attenteuser'
 
 
