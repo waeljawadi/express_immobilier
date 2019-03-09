@@ -3,6 +3,7 @@
 }
 
 .ajouter input,
+.ajouter textarea,
 .ajouter input[type="radio"] + label,
 .ajouter input[type="checkbox"] + label:before,
 .ajouter select option,
