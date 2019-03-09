@@ -6,7 +6,7 @@ class Defaultadmin extends Component {
     render(){
         return (
             <div className={`content-wrapper ${_css_.padds}`}>
-           <p>   fghfghfdgh </p>
+           <p>   Default </p>
             </div>
         )
     }
