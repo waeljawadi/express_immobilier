@@ -271,4 +271,9 @@
     padding-right: 0;
   }
 }
+
+.ajouter .input-group.input-group-icon select {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 /*# sourceMappingURL=style.css.map */
