@@ -7,7 +7,7 @@ class Ajout extends Component {
     return (
       <React.Fragment>
 <div className={`content-wrapper ${_css_.padds}`}>
-  <p>Ajouttttttttttttttttttttttttttttttttttttttttttttttttttttttbnbtttttttttt</p>
+  <p>Ajouttttttttttttttttttttgrgrttttttttttttttttttttttttttttttbnbtttttttttt</p>
 </div>
 
       </React.Fragment>
