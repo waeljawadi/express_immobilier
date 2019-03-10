@@ -41,6 +41,8 @@ class Ajout extends Component {
             <TabList>
               <Tab>Information</Tab>
               <Tab>Description</Tab>
+              <Tab>Etiquette</Tab>
+              <Tab>Images</Tab>
             </TabList>
 
             <TabPanel>
@@ -162,7 +164,6 @@ class Ajout extends Component {
              
     
             </TabPanel>
-
             <TabPanel>
 
               
@@ -171,14 +172,66 @@ class Ajout extends Component {
               <div className="row">
                 
                   <div className="input-group input-group-icon">
-                  <textarea class="form-control"></textarea>
+                  <textarea class="form-control" placeholder="Description courte"></textarea>
                    
                  
 
                 </div>
+                <div className="input-group input-group-icon area_height">
+                  <textarea placeholder="Description detaillé" class="form-control"></textarea>
+                   
+                 
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
 </div>
 </form>
 </div>
+
+            </TabPanel>
+            <TabPanel>
+
+
+
+
+            <div class="boxes">
+  <input type="checkbox" id="vendu" />
+  <label for="vendu">Vendu</label>
+  <input type="checkbox" id="nouveaute" />
+  <label for="nouveaute">Nouveauté</label>
+  <input type="checkbox" id="desactiver" />
+  <label for="desactiver">Desactiver</label>
+  <input type="checkbox" id="enavant" />
+  <label for="enavant">Mettre en avant</label>
+</div>
+
+
+
 
             </TabPanel>
           </Tabs>
