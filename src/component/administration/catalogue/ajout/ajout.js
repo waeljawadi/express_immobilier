@@ -48,36 +48,7 @@ class Ajout extends Component {
             <TabPanel>
               <div className="container ajouter">
                 <form>
-                  <div className="row">
-                    <div className="col-half">
-                      <div className="input-group input-group-icon">
-                        <input
-                          type="text"
-                          placeholder="Reference"
-                          name="reference"
-                          value={`Reference: ${this.state.reference}`}
-                          disabled
-                        />
-                        <div className="input-icon">
-                          <i className="fa fa-user" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-half">
-                      <div className="input-group input-group-icon">
-                        <input
-                          type="text"
-                          placeholder="Untitulé du bien"
-                          name="title"
-                          value={this.state.title}
-                          onChange={this.handlechange}
-                        />
-                        <div className="input-icon">
-                          <i className="fa fa-user" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                   
                   <div className="row">
                     <div className="col-half">
                       <div className="input-group input-group-icon">
