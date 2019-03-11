@@ -31,7 +31,7 @@ class Listimmo extends Component {
       <React.Fragment>
 <div className={`content-wrapper ${_css_.padds}`}>
 
-        <div className="container">
+        <div className="">
           <div className="row">
             <div className="col-lg-12">
               <div className="main-box clearfix">
