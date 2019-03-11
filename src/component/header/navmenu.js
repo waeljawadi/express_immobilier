@@ -60,9 +60,9 @@ class Navmenu extends Component {
                           </Link>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
-                            Contact
-                          </a>
+                          <Link  to='/contact' className="nav-link">
+                            contact
+                          </Link>
                         </li>
                       </ul>
                     </nav>

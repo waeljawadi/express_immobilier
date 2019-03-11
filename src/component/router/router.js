@@ -19,6 +19,7 @@ import Config from '../administration/catalogue/config/config'
 
 import Listuser from '../administration/user/list/listuser'
 import Attenteuser from '../administration/user/attente/attenteuser'
+import SingleImmo from '../administration/catalogue/list/single_immo'
 
 
 
@@ -61,6 +62,7 @@ class Router extends Component {
         <Route exact path="/admin/user/attenteuser" component={Attenteuser} />
 
 
+        <Route exact path="/contact" component={SingleImmo} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
