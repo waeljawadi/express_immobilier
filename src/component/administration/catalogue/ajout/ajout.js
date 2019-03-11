@@ -5,6 +5,7 @@ import './style/style.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import 'rc-input-number/assets/index.css';
+import axios from 'axios'
 class Ajout extends Component {
 
 
@@ -12,7 +13,7 @@ class Ajout extends Component {
     super(props)
     {
       this.state = { 
-        reference: Math.trunc(Date.now() * Math.random() * Math.random()),
+        _id: Math.trunc(Date.now() * Math.random() * Math.random()),
         title : '',
         prix : '' ,
         surface : '',
@@ -22,6 +23,28 @@ class Ajout extends Component {
        }
     }
   }
+
+  insert_immo = () =>
+  {
+          axios.post('/postimmo',{...this.state})
+          .then( console.log('Base de donner mis a jour '))
+          .catch((err)=> console.log("erreur pendant l'insertion")) 
+          
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   handleNumbers = (evt) => {
     this.setState({ [evt.target.name]:(evt.target.validity.valid) ? evt.target.value : this.state[evt.target.name] });
@@ -53,9 +76,9 @@ class Ajout extends Component {
                       <div className="input-group input-group-icon">
                         <input
                           type="text"
-                          placeholder="Reference"
-                          name="reference"
-                          value={`Reference: ${this.state.reference}`}
+                          placeholder="_id"
+                          name="_id"
+                          value={`_id: ${this.state._id}`}
                           disabled
                         />
                         <div className="input-icon">
@@ -236,7 +259,7 @@ class Ajout extends Component {
             </TabPanel>
           </Tabs>
 
-          <button type="button" class="btn btn-success">Ajouter immobilier</button>
+          <button type="button" onClick={this.insert_immo()} class="btn btn-success">Ajouter immobilier</button>
 
 
 
