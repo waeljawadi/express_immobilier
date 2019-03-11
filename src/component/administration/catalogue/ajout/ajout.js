@@ -15,7 +15,9 @@ class Ajout extends Component {
         reference: Math.trunc(Date.now() * Math.random() * Math.random()),
         title : '',
         prix : '' ,
-        surface : ''
+        surface : '',
+        date_construction:'',
+        type_immobilier:''
 
        }
     }
@@ -38,7 +40,7 @@ class Ajout extends Component {
           <Tabs>
             <TabList>
               <Tab>Information</Tab>
-              <Tab>Title 2</Tab>
+              <Tab>Description</Tab>
             </TabList>
 
             <TabPanel>
@@ -110,7 +112,9 @@ class Ajout extends Component {
                   <div className="row">
                   <div className="col-half">
                   <div className="input-group input-group-icon">
-                      <input  type="date" name="date_construction" />
+                      <input  type="date" name="date_construction"  onChange={this.handlechange}
+                      value={this.state.date_construction}
+                       />
 
                         <div className="input-icon">
                           <i className="fa fa-user" />
@@ -124,7 +128,12 @@ class Ajout extends Component {
 
 
 <div className="input-group input-group-icon">
-   <select>
+   <select 
+   name="type_immobilier"
+   value={this.state.type_immobilier}
+    onChange={this.handlechange}
+   >
+   <option value="" disabled selected>Choisir type d'immobilier</option>
      <option>Maison</option>
      <option>Appartement</option>
      <option>Villa</option>
@@ -154,7 +163,24 @@ class Ajout extends Component {
     
             </TabPanel>
 
-            <TabPanel>dfgdfg</TabPanel>
+            <TabPanel>
+
+              
+            <div className="container ajouter">
+                <form>
+              <div className="row">
+                
+                  <div className="input-group input-group-icon">
+                  <textarea class="form-control"></textarea>
+                   
+                 
+
+                </div>
+</div>
+</form>
+</div>
+
+            </TabPanel>
           </Tabs>
 
           <button type="button" class="btn btn-success">Ajouter immobilier</button>
