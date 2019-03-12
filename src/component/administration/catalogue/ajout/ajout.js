@@ -32,7 +32,7 @@ class Ajout extends Component {
 insert_immo = () =>
 {
         axios.post('/postimmo',{...this.state})
-        .then( console.log('Base de donner mis a jour '))
+        .then( alert('ok'))
         .catch((err)=> console.log("erreur pendant l'insertion")) 
         
 }
