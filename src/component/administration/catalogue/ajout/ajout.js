@@ -33,7 +33,11 @@ class Ajout extends Component {
         vendu: false,
         nouveaute: false,
         desactiver: false,
-        enavant: false
+        enavant: false,
+        garage: false,
+        jardin: false,
+        cuizine:true,
+        salledebain: true
       }
     }
   }
@@ -62,7 +66,11 @@ class Ajout extends Component {
             vendu: false,
             nouveaute: false,
             desactiver: false,
-            enavant: false
+            enavant: false,
+            garage: false,
+            jardin: false,
+            cuizine:true,
+            salledebain: true
           }))
 
       )
@@ -120,6 +128,7 @@ class Ajout extends Component {
               <Tab>Information</Tab>
               <Tab>Description</Tab>
               <Tab>Etiquette</Tab>
+              <Tab>Autre options</Tab>
               <Tab>Images</Tab>
             </TabList>
             <TabPanel>
@@ -245,6 +254,11 @@ class Ajout extends Component {
                 </div>
               </div>
             </TabPanel>
+           
+           
+            
+           
+           
             <TabPanel>
               <div className="container ajouter">
                 <form>
@@ -271,6 +285,9 @@ class Ajout extends Component {
                 </form>
               </div>
             </TabPanel>
+           
+        
+           
             <TabPanel>
               <div className="boxes">
                 <input
@@ -307,6 +324,56 @@ class Ajout extends Component {
                 <label for="enavant">Mettre en avant</label>
               </div>
             </TabPanel>
+          
+
+            <TabPanel>
+
+              <div className="boxes">
+                <input
+                  type="checkbox"
+                  id="garage"
+                  name="garage"
+                  checked={this.state.garage}
+                  onChange={this.toggleChange}
+                />
+                <label for="garage">Garage</label>
+              </div>
+              <div className="boxes">
+                <input
+                  type="checkbox"
+                  id="jardin"
+                  name="jardin"
+                  checked={this.state.jardin}
+                  onChange={this.toggleChange}
+                />
+                <label for="jardin">Jardin</label>
+              </div>
+              <div className="boxes">
+                <input
+                  type="checkbox"
+                  id="cuizine"
+                  name="cuizine"
+                  checked={this.state.cuizine}
+                  onChange={this.toggleChange}
+                />
+                <label for="cuizine">Cuizine</label>
+              </div>
+              <div className="boxes">
+                <input
+                  type="checkbox"
+                  id="salledebain"
+                  name="salledebain"
+                  checked={this.state.salledebain}
+                  onChange={this.toggleChange}
+                />
+                <label for="salledebain">Salle de bain</label>
+              </div>
+            
+            </TabPanel>
+
+
+            <TabPanel></TabPanel>
+          
           </Tabs>
           <button
             type="submit"
