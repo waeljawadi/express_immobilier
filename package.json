@@ -18,6 +18,7 @@
     "react-datepicker": "^2.1.0",
     "react-dom": "^16.8.4",
     "react-grid-system": "^4.4.3",
+    "react-notifications": "^1.4.3",
     "react-owl-carousel": "^2.3.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

@@ -6,6 +6,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import 'rc-input-number/assets/index.css';
 import axios from 'axios'
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 class Ajout extends Component {
   constructor(props) {
     super(props)
