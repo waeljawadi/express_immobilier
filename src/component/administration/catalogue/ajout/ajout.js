@@ -23,7 +23,7 @@ class Ajout extends Component {
         vendu: false,
         nouveaute: false,
         desactiver: false,
-        enavant: false,
+        enavant: false, 
        }
     }
   }
