@@ -17,7 +17,7 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
         let newimmo=req.body
     db.collection("immo").insertOne(newimmo, (err, data) => {
         if (err) res.send("cant not add list")
-        else res.send("data added")
+        else res.send(data)
 })
     })
 
