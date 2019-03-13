@@ -360,4 +360,8 @@ input[type="checkbox"]:checked + label:before {
 .notification-success {
   background-color: #83bb4d !important;
 }
+
+img {
+  max-width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

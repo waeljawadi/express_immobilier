@@ -1,26 +1,20 @@
 import React from "react"
 import { Component } from "react"
-
 import _css_ from "../../style/style.module.css"
 import "./style/style.css"
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
-
 import axios from "axios"
-
 import { Redirect } from "react-router-dom"
-
 import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
-
 import ReactTooltip from "react-tooltip"
+const BASE_URL = "http://localhost:3000/"
 class Ajout extends Component {
   constructor(props) {
     super(props)
     {
       this.state = {
-        //    _id: Math.trunc(Date.now() * Math.random() * Math.random()),
         title: "",
         prix: "",
         surface: "",
@@ -36,19 +30,49 @@ class Ajout extends Component {
         enavant: false,
         garage: false,
         jardin: false,
-        cuizine:true,
-        salledebain: true
+        cuizine: false,
+        salledebain: false,
+        latitude: "",
+        longitude: "",
+        images: [],
+        imageUrls: [],
+        message: ""
       }
     }
   }
-  ProtectedComponent = () => {
-    return <Redirect to="/admin" />
+  selectImages = event => {
+    let images = []
+    for (var i = 0; i < event.target.files.length; i++) {
+      images[i] = event.target.files.item(i)
+    }
+    images = images.filter(image => image.name.match(/\.(jpg|jpeg|png|gif)$/))
+    let message = `${images.length} valid image(s) selected`
+    this.setState({ images, message })
+  }
+  uploadImages = () => {
+    const uploaders = this.state.images.map(image => {
+      const data = new FormData()
+      data.append("image", image, image.name)
+      // Make an AJAX upload request using Axios
+      return axios.post(BASE_URL + "upload", data).then(response => {
+        this.setState({
+          imageUrls: [response.data.imageUrl, ...this.state.imageUrls]
+        })
+      })
+    })
+    // Once all the files are uploaded
+    axios
+      .all(uploaders)
+      .then(() => {
+        console.log("done")
+      })
+      .catch(err => alert(err.message))
   }
   insert_immo = () => {
     axios
       .post("/postimmo", { ...this.state })
-      .then(response =>
-        (
+      .then(
+        response => (
           NotificationManager.success("Ajouter avec success", "", 3000),
           window.setTimeout(() => {
             NotificationManager.info("Vous pouvez ajouter une autre immobilier")
@@ -69,13 +93,19 @@ class Ajout extends Component {
             enavant: false,
             garage: false,
             jardin: false,
-            cuizine:true,
-            salledebain: true
-          }))
-
+            cuizine: false,
+            salledebain: false,
+            latitude: "",
+            longitude: ""
+          })
+        )
       )
-      .catch(err => NotificationManager.error('Une erreur lors d\'ajout, essayer une autre fois', '') )
-      
+      .catch(err =>
+        NotificationManager.error(
+          "Une erreur lors d'ajout, essayer une autre fois",
+          ""
+        )
+      )
   }
   handleNumbers = evt => {
     this.setState({
@@ -252,13 +282,42 @@ class Ajout extends Component {
                     </div>
                   </div>
                 </div>
+                <div className="row">
+                  <div className="col-half">
+                    <div className="input-group input-group-icon">
+                      <input
+                        type="text"
+                        name="latitude"
+                        data-tip={`Optionel`}
+                        placeholder="Latitude"
+                        value={this.state.latitude}
+                        pattern="[0-9]+([\.][0-9]{0,4})?"
+                        onChange={this.handleNumbers}
+                      />
+                      <div className="input-icon">
+                        <i className="fa fa-user" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-half">
+                    <div className="input-group input-group-icon">
+                      <input
+                        type="text"
+                        name="longitude"
+                        data-tip={`Optionel`}
+                        placeholder="Longitude"
+                        pattern="[0-9]+([\.][0-9]{0,4})?"
+                        onChange={this.handleNumbers}
+                        value={this.state.longitude}
+                      />
+                      <div className="input-icon">
+                        <i className="fa fa-user" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </TabPanel>
-           
-           
-            
-           
-           
             <TabPanel>
               <div className="container ajouter">
                 <form>
@@ -285,9 +344,6 @@ class Ajout extends Component {
                 </form>
               </div>
             </TabPanel>
-           
-        
-           
             <TabPanel>
               <div className="boxes">
                 <input
@@ -324,10 +380,7 @@ class Ajout extends Component {
                 <label for="enavant">Mettre en avant</label>
               </div>
             </TabPanel>
-          
-
             <TabPanel>
-
               <div className="boxes">
                 <input
                   type="checkbox"
@@ -368,12 +421,50 @@ class Ajout extends Component {
                 />
                 <label for="salledebain">Salle de bain</label>
               </div>
-            
             </TabPanel>
-
-
-            <TabPanel></TabPanel>
-          
+            <TabPanel>
+              <div>
+                <div className="col-sm-12">
+                  <div className="col-sm-4">
+                    <input
+                      className="form-control "
+                      type="file"
+                      onChange={this.selectImages}
+                      multiple
+                    />
+                  </div>
+                  <p className="text-info">{this.state.message}</p>
+                  <div className="col-sm-4">
+                    <button
+                      className="btn btn-primary"
+                      value="Submit"
+                      onClick={this.uploadImages}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+                <p />
+                <div className="row">
+                  {this.state.imageUrls.map((url, i) => (
+                    <div className="col-lg-2" key={i}>
+                      <img
+                        src={BASE_URL + url}
+                        className="img-rounded img-responsive"
+                        alt="not available"
+                      />
+                      <br />
+                    </div>
+                  ))}
+                </div>
+                <p />
+              </div>
+              {/* <div className="col-lg-2">
+                <p>
+                  <img src={BASE_URL + `images/uploads/1552498102274-53121645_1963064374001345_6607211026255446016_n.jpg`}  />
+                </p>
+              </div> */}
+            </TabPanel>
           </Tabs>
           <button
             type="submit"
