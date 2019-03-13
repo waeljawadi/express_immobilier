@@ -345,6 +345,18 @@ input[type="checkbox"]:checked + label:before {
 }
 
 
-img {
-  max-width: 100%
+.thumbnail img {
+  max-width: 100% !important
+}
+
+input[type="file"]
+{
+  padding: 0px
+}
+
+.flexit
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
