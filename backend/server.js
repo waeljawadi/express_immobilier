@@ -1,14 +1,13 @@
 
 const express=require('express')
-const bodyParser=require('body-parser')
+
 const{ObjectID,MongoClient}=require('mongodb')
 
 const app=express()
 
-const express = require("express")
+
 const bodyParser = require("body-parser")
-const { MongoClient } = require("mongodb")
-const app = express()
+
 
 app.use(bodyParser.json())
 const MongoUrl = "mongodb://localhost:27017"
