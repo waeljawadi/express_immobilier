@@ -252,6 +252,20 @@
   padding-right: 0;
 }
 
+.ajouter .col-full {
+  padding-right: 10px;
+  float: left;
+  width: 100%;
+}
+
+.ajouter .col-full:last-of-type {
+  padding-right: 0;
+}
+
+.ajouter .col-full:last-of-type {
+  padding-right: 0;
+}
+
 .ajouter .col-third {
   padding-right: 10px;
   float: left;
@@ -333,5 +347,17 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.notification-container {
+  top: 50px !important;
+}
+
+.notification {
+  font-size: 1.2em !important;
+}
+
+.notification-success {
+  background-color: #83bb4d !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -210,13 +210,33 @@ select option {
   padding-right: 10px;
   float: left;
   width: 50%;
-}
+} 
 .col-half:last-of-type {
   padding-right: 0;
 }
 .col-half:last-of-type {
   padding-right: 0;
 }
+
+ 
+.col-full {
+  padding-right: 10px;
+  float: left;
+  width: 100%;
+} 
+
+.col-full:last-of-type {
+  padding-right: 0;
+}
+
+.col-full:last-of-type {
+  padding-right: 0;
+}
+
+
+
+
+
 .col-third {
   padding-right: 10px;
   float: left;
@@ -309,4 +329,17 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+
+.notification-container
+{
+  top:50px !important;
+} 
+.notification
+{
+  font-size: 1.2em !important;
+}
+.notification-success {
+  background-color: #83bb4d !important;
 }
