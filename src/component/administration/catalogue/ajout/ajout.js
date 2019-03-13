@@ -11,7 +11,7 @@ class Ajout extends Component {
     super(props)
     {
       this.state = { 
-        _id: Math.trunc(Date.now() * Math.random() * Math.random()),
+       // _id: Math.trunc(Date.now() * Math.random() * Math.random()),
         title : '',
         prix : '' ,
         surface : '',
@@ -21,10 +21,10 @@ class Ajout extends Component {
         ville:'',
         dcourte:'',
         dcomplet:'',
-        vendu: false,
-        nouveaute: false,
-        desactiver: false,
-        enavant: false,
+        vendu: 0,
+        nouveaute: 0,
+        desactiver: 0,
+        enavant: 0,
        }
     }
   }
@@ -46,7 +46,7 @@ insert_immo = () =>
   }
   toggleChange = (e) => {
     this.setState({
-      [e.target.name]: !this.state[e.target.name]
+      [e.target.name]: ((this.state[e.target.name]) == 0) ?  1 :  0
     });
   }
 
@@ -226,7 +226,7 @@ insert_immo = () =>
               <div class="boxes">
                 <input type="checkbox" id="vendu"  name="vendu"  checked={this.state.vendu} onChange={this.toggleChange} />
                 <label for="vendu">Vendu</label>
-                <input type="checkbox" id="nouveaute" name="nouveaute" checked={this.state.nouveaute} onChange={this.toggleChange} />
+                <input type="checkbox" id="nouveaute" name="nouveaute"  checked={this.state.nouveaute} onChange={this.toggleChange} />
                 <label for="nouveaute">Nouveauté</label>
                 <input type="checkbox" id="desactiver" name="desactiver" checked={this.state.desactiver} onChange={this.toggleChange} />
                 <label for="desactiver">Desactiver</label>

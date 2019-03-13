@@ -1,6 +1,6 @@
 const express=require('express')
 const bodyParser=require('body-parser')
-const{MongoClient}=require('mongodb')
+const{ObjectID,MongoClient}=require('mongodb')
 
 const app=express()
 app.use(bodyParser.json())
@@ -20,6 +20,38 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
         else res.send(data)
 })
     })
+
+
+app.get('/getimmo',(req,res)=>{
+
+    db.collection('immo').find().toArray((err,data)=>{
+         if(err) res.send('can not get list') 
+        else res.send(data)
+    })   
+    })
+
+
+    app.delete('/deleteimmo/:id',(req,res)=>{
+        let id=ObjectID(req.params.id)
+        db.collection('immo').findOneAndDelete({_id:id},(err,data)=>{
+            if (err) res.send('can not delete contact')
+            else res.send(data)
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 })
 

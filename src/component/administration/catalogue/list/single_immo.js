@@ -1,28 +1,59 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+
 import './listimmo.css'
 
 class SingleImmo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
+   
+
+  //   deleteimmobilier=()=>
+  //   {  const {item} = this.props
+  //   axios.delete(`/deleteimmo/${item._id}`)   
+  // .then(()=>this.props.deleteimmoReducer(item._id)) 
+  // .catch((err)=>alert(err)) 
+  //   }
+
+
+suprrimmo=()=>
+{  const {item} = this.props
+axios.delete(`/deleteimmo/${item._id}`)   
+.then('') 
+.catch((err)=>alert(err)) 
+}
+
+
+
+    statue=()=>{
+      if ((this.props.item.vendu)==1)
+    
+       return 'vendu'
+      
+        else 
+          return 'disponible'
+      }
+    
+    
+
+
     render() { 
+      const {item}=this.props
+      
+
         return ( <React.Fragment> 
-           
 <tr>
                         <td>
                           <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt />
-                          <a href="#" className="user-link">Mila Kunis</a>
+                          <a href="#" className="user-link">{item.title}</a>
                           <span className="user-subhead">Admin</span>
                         </td>
                         <td>
-                          2013/08/08
+                          {item.date_construction}
                         </td>
                         <td className="text-center">
-                          <span className="label label-default">Inactive</span>
+                          <span className="label label-default">{this.statue()} </span>
                         </td>
                         <td>
-                          <a href="#">mila@kunis.com</a>
+                          <a href="#">{item.adresse}</a>
                         </td>
                         <td style={{width: '20%'}}>
                           <a href="#" className="table-link">
@@ -39,11 +70,13 @@ class SingleImmo extends Component {
                           </a>
                           <a href="#" className="table-link danger">
                             <span className="fa-stack">
-                              <i className="fa fa-square fa-stack-2x" />
+                              <i className="fa fa-square fa-stack-2x"/>
                               <i className="fa fa-trash-o fa-stack-1x fa-inverse" />
                             </span>
                           </a>
+                          <button  onClick={this.suprrimmo}> delete</button>
                         </td>
+                        
                       </tr>
                      
 
@@ -56,4 +89,17 @@ class SingleImmo extends Component {
     }
 }
  
-export default SingleImmo;
+
+
+export default SingleImmo
+
+
+
+
+
+
+
+
+
+
+

@@ -1,32 +1,29 @@
 import React from "react"
 import { Component } from "react"
 import SingleImmo from './single_immo'
+import {connect} from 'react-redux'
+import axios from 'axios'
 
 import _css_ from "../../style/style.module.css"
 import './listimmo.css'
 
-const Tab =[
-{
 
-  
+class Listimmo extends Component {
 
-
-},
-{
+  componentDidUpdate=()=>{
+    axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+}
 
 
+componentDidMount=()=>{
+  axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
 }
 
 
 
-
-
-
-
-]
-
-class Listimmo extends Component {
   render() {
+    const {listimmo}= this.props
+
     return (
       <React.Fragment>
 <div className={`content-wrapper ${_css_.padds}`}>
@@ -42,7 +39,7 @@ class Listimmo extends Component {
                         <th><span>User</span></th>
                         <th><span>Created</span></th>
                         <th className="text-center"><span>Status</span></th>
-                        <th><span>Email</span></th>
+                        <th><span>Adresse</span></th>
                         <th>&nbsp;</th>
                       </tr>
                     </thead>
@@ -50,7 +47,7 @@ class Listimmo extends Component {
                       
                        
 
-                    { Tab.map((el,index)=><SingleImmo item={el} key={index}  /> 
+                    { listimmo.map((el,index)=><SingleImmo item={el} key={index}  /> 
         )}
                        
                      
@@ -70,4 +67,26 @@ class Listimmo extends Component {
   }
 }
 
-export default Listimmo
+
+
+const mapStateToProps=(state)=>
+{
+    return {
+        listimmo:state.immoReducer
+    }
+}
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        updateImmoReducer:listimmo=>
+        {
+            dispatch({
+                type:'UPDATE_IMMO',
+                listimmo            })
+        }
+    }
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Listimmo);
