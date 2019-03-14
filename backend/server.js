@@ -107,7 +107,8 @@ app.get('/getimmo',(req,res)=>{
 
     app.put('/showimmo/:id',(req,res)=>{
       let id=ObjectID(req.params.id)
-  db.collection('immo').findOneAndUpdate({_id:id,desactiver:false},{$set:{desactiver:true}},(err,data)=>{
+  db.collection('immo').findOneAndUpdate({_id:id,desactiver},{$set:!{desactiver}}
+    ,(err,data)=>{
       if(err) res.send('can not edit the immo')
       else res.send (data)
   })

@@ -148,26 +148,6 @@ class EditImmo extends Component {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   render() {
     return (
       <React.Fragment>
@@ -178,7 +158,6 @@ class EditImmo extends Component {
               <Tab>Description</Tab>
               <Tab>Etiquette</Tab>
               <Tab>Autre options</Tab>
-              <Tab>Images</Tab>
             </TabList>
             <TabPanel>
               <div className="container ajouter">

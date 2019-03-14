@@ -90,9 +90,8 @@ axios.put(`/showimmo/${item._id}`)
                               <i className="fa fa-trash-o fa-stack-1x fa-inverse"   onClick={this.deleteimmobilier}></i>>
                             </span>
                           </a>
-                          
+                         
                         </td>
-                        
                       </tr>
                      
 
