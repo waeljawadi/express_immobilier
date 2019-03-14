@@ -10,8 +10,8 @@ import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
 import ReactTooltip from "react-tooltip"
 
-import ReactFancyBox from 'react-fancybox'
-import 'react-fancybox/lib/fancybox.css'
+import ReactFancyBox from "react-fancybox"
+import "react-fancybox/lib/fancybox.css"
 
 const BASE_URL = "http://localhost:3000/"
 class Ajout extends Component {
@@ -427,45 +427,43 @@ class Ajout extends Component {
               </div>
             </TabPanel>
             <TabPanel>
-              
-                    <input
-                      className="form-control "
-                      type="file"
-                      onChange={this.selectImages}
-                      multiple
-                    />
-                  <p className="text-info">{this.state.message}</p>
-                    <button
-                      className="btn btn-primary"
-                      value="Submit"
-                      onClick={this.uploadImages}
-                    >
-                      Upload all pictures
-                    </button>
-                <p />
-                <div className="row">
-                  {this.state.imageUrls.map((url, i) => (
-                    <div className="col-lg-2 flexit" key={i}>
-                      {/* <img
+              <input
+                className="form-control "
+                type="file"
+                onChange={this.selectImages}
+                multiple
+              />
+              <p className="text-info">{this.state.message}</p>
+              <button
+                className="btn btn-primary"
+                value="Submit"
+                onClick={this.uploadImages}
+              >
+                Upload all pictures
+              </button>
+              <p />
+              <div className="row">
+                {this.state.imageUrls.map((url, i) => (
+                  <div className="col-lg-2 flexit" key={i}>
+                    {/* <img
                         src={BASE_URL + url}
                         className="img-rounded img-responsive"
                         alt="not available"
                       /> */}
 
-<ReactFancyBox
-          thumbnail={BASE_URL + url}
-          image={BASE_URL + url}
-          />
+                    <ReactFancyBox
+                      thumbnail={BASE_URL + url}
+                      image={BASE_URL + url}
+                    />
 
-<p/>
+                    <p />
 
+                    <br />
+                  </div>
+                ))}
+              </div>
+              <p />
 
-                      <br />
-                    </div>
-                  ))}
-                </div>
-                <p />
-           
               {/* <div className="col-lg-2">
                 <p>
                   <img src={BASE_URL + `images/uploads/1552498102274-53121645_1963064374001345_6607211026255446016_n.jpg`}  />
@@ -482,22 +480,6 @@ class Ajout extends Component {
             Ajouter immobilier
           </button>
         </div>
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-
-
 
         <NotificationContainer />
         <ReactTooltip />
