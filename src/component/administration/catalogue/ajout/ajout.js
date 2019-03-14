@@ -14,6 +14,8 @@ import { Redirect } from "react-router-dom"
 import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
 
+
+
 import ReactTooltip from "react-tooltip"
 class Ajout extends Component {
   constructor(props) {
@@ -399,7 +401,11 @@ class Ajout extends Component {
             </TabPanel>
 
 
-            <TabPanel></TabPanel>
+            <TabPanel>
+
+
+
+            </TabPanel>
           
           </Tabs>
           <button

@@ -9,15 +9,16 @@ import './listimmo.css'
 
 
 class Listimmo extends Component {
-
-  componentDidUpdate=()=>{
+  componentDidMount=()=>{
     axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
-}
+  }
+
+//   componentDidUpdate=()=>{
+//     axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+// }
 
 
-componentDidMount=()=>{
-  axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
-}
+
 
 
 

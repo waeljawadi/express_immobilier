@@ -1,36 +1,48 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import {connect} from 'react-redux'
 import './listimmo.css'
 
 class SingleImmo extends Component {
    
 
-  //   deleteimmobilier=()=>
-  //   {  const {item} = this.props
-  //   axios.delete(`/deleteimmo/${item._id}`)   
-  // .then(()=>this.props.deleteimmoReducer(item._id)) 
-  // .catch((err)=>alert(err)) 
-  //   }
+    deleteimmobilier=()=>
+    {  const {item} = this.props
+    axios.delete(`/deleteimmo/${item._id}`)   
+  .then(()=>this.props. deleteImmoReducer(item._id)) 
+  .catch((err)=>alert(err)) 
+    }
 
 
-suprrimmo=()=>
-{  const {item} = this.props
-axios.delete(`/deleteimmo/${item._id}`)   
-.then('') 
-.catch((err)=>alert(err)) 
+// suprrimmo=()=>
+// {  const {item} = this.props
+// axios.delete(`/deleteimmo/${item._id}`)   
+// .then('') 
+// .catch((err)=>alert(err)) 
+// }
+
+show=()=>
+{
+const {item}=this.props
+axios.put(`/showimmo/${item._id}`)
+.then('')
+.catch((err)=>alert(err))
+
 }
 
 
-
     statue=()=>{
-      if ((this.props.item.vendu)==1)
+      if ((this.props.item.vendu)==1 )
     
        return 'vendu'
       
         else 
           return 'disponible'
       }
+
+   
+
+      
     
     
 
@@ -57,10 +69,13 @@ axios.delete(`/deleteimmo/${item._id}`)
                         </td>
                         <td style={{width: '20%'}}>
                           <a href="#" className="table-link">
-                            <span className="fa-stack">
-                              <i className="fa fa-square fa-stack-2x" />
-                              <i className="fa fa-search-plus fa-stack-1x fa-inverse" />
-                            </span>
+                          <span class="fa-stack">
+                          <i class="fa fa-camera fa-stack-1x" ></i>
+                         <i class="fa fa-ban fa-stack-2x" 
+                            onClick={this.show}
+                           >
+                          </i>
+                         </span>
                           </a>
                           <a href="#" className="table-link">
                             <span className="fa-stack">
@@ -70,11 +85,11 @@ axios.delete(`/deleteimmo/${item._id}`)
                           </a>
                           <a href="#" className="table-link danger">
                             <span className="fa-stack">
-                              <i className="fa fa-square fa-stack-2x"/>
-                              <i className="fa fa-trash-o fa-stack-1x fa-inverse" />
+                              <i className="fa fa-square fa-stack-2x"  />
+                              <i className="fa fa-trash-o fa-stack-1x fa-inverse"   onClick={this.deleteimmobilier}></i>>
                             </span>
                           </a>
-                          <button  onClick={this.suprrimmo}> delete</button>
+                          
                         </td>
                         
                       </tr>
@@ -89,10 +104,20 @@ axios.delete(`/deleteimmo/${item._id}`)
     }
 }
  
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        deleteImmoReducer:_id=>
+        {
+            dispatch({
+                type:'REMOVE_IMMO',
+                _id
+            })
+        }
+    }
+}
 
-
-export default SingleImmo
-
+export default connect(null,mapDispatchToProps)(SingleImmo);
 
 
 

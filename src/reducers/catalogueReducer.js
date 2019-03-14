@@ -8,7 +8,10 @@ const immoReducer=(state=[],action)=>
       return(
           state=action.listimmo
       )
-
+      case 'REMOVE_IMMO':
+      return (
+          state.filter(el=>el._id!==action._id)
+      )
      
 
       default :

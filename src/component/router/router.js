@@ -23,7 +23,6 @@ import SingleImmo from '../administration/catalogue/list/single_immo'
 
 
 
-
 class Router extends Component {
   constructor(props) {
     super(props)
