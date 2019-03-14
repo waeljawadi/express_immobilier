@@ -8,6 +8,9 @@ import axios from "axios"
 import { Redirect } from "react-router-dom"
 import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
+
+
+
 import ReactTooltip from "react-tooltip"
 
 import ReactFancyBox from "react-fancybox"
@@ -18,6 +21,24 @@ class Ajout extends Component {
   constructor(props) {
     super(props)
     {
+
+      this.state = { 
+       // _id: Math.trunc(Date.now() * Math.random() * Math.random()),
+        title : '',
+        prix : '' ,
+        surface : '',
+        date_construction:'',
+        type_immobilier:'',
+        adresse: '',
+        ville:'',
+        dcourte:'',
+        dcomplet:'',
+        vendu: 0,
+        nouveaute: 0,
+        desactiver: 0,
+        enavant: 0,
+       }
+
       this.state = {
         title: "",
         prix: "",
@@ -42,6 +63,7 @@ class Ajout extends Component {
         imageUrls: [],
         message: ""
       }
+
     }
   }
   selectImages = event => {
@@ -123,8 +145,11 @@ class Ajout extends Component {
   }
   toggleChange = e => {
     this.setState({
-      [e.target.name]: !this.state[e.target.name]
-    })
+
+      [e.target.name]: ((this.state[e.target.name]) == 0) ?  1 :  0
+    });
+
+    
   }
   validation = () => {
     let valide = false
@@ -152,6 +177,7 @@ class Ajout extends Component {
       valideimmobilier
     totalvalid == 6 ? (valide = true) : (valide = false)
     return valide
+
   }
   render() {
     return (
@@ -358,6 +384,9 @@ class Ajout extends Component {
                   onChange={this.toggleChange}
                 />
                 <label for="vendu">Vendu</label>
+
+                <input type="checkbox" id="nouveaute" name="nouveaute"  checked={this.state.nouveaute} onChange={this.toggleChange} />
+
                 <input
                   type="checkbox"
                   id="nouveaute"
@@ -365,6 +394,7 @@ class Ajout extends Component {
                   checked={this.state.nouveaute}
                   onChange={this.toggleChange}
                 />
+
                 <label for="nouveaute">Nouveauté</label>
                 <input
                   type="checkbox"

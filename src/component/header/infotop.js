@@ -29,6 +29,7 @@ class Infotop extends Component {
                   <i className={`fa fa-user ${_css_.users}`} />
                   <Link className="link"  to='/login' id="login">Login</Link> or <Link className="link" 
                    to='/register'  id="registeruser">Register</Link>
+                   
                 </span>
               </div>
             </div>

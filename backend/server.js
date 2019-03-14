@@ -1,14 +1,14 @@
-const express = require("express")
+
+const express=require('express')
+
+const{ObjectID,MongoClient}=require('mongodb')
+
+const app=express()
+
+
 const bodyParser = require("body-parser")
-const { MongoClient } = require("mongodb")
-
-const multer = require('multer');
-
-const cors = require('cors');
 
 
-
-const app = express()
 app.use(bodyParser.json())
 const MongoUrl = "mongodb://localhost:27017"
 const database = "expressimmo"
@@ -75,6 +75,8 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
 
 
 
+
+
   app.post("/postimmo", (req, res) => {
     let newimmo = req.body
     db.collection("immo").insertOne(newimmo, (err, data) => {
@@ -83,21 +85,37 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
   })
 
 
+app.get('/getimmo',(req,res)=>{
+
+    db.collection('immo').find().toArray((err,data)=>{
+         if(err) res.send('can not get list') 
+        else res.send(data)
+    })   
+    })
 
 
+    app.delete('/deleteimmo/:id',(req,res)=>{
+        let id=ObjectID(req.params.id)
+        db.collection('immo').findOneAndDelete({_id:id},(err,data)=>{
+            if (err) res.send('can not delete immobilier')
+            else res.send(data)
+        })
+    })
+
+
+    app.put('/showimmo/:id',(req,res)=>{
+      let id=ObjectID(req.params.id)
+  db.collection('immo').findOneAndUpdate({_id:id,desactiver:false},{$set:{desactiver:true}},(err,data)=>{
+      if(err) res.send('can not edit the immo')
+      else res.send (data)
+  })
+  })
+  
+  
+
+ 
 
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 const port = process.env.PORT || 3070
