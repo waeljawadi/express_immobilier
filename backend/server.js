@@ -106,21 +106,21 @@ app.get('/getimmo',(req,res)=>{
     })
 
 
-    app.put('/showimmo/:id',(req,res)=>{
+    app.put('/isactive/:id/:desactiver',(req,res)=>{
       let id=ObjectID(req.params.id)
-  db.collection('immo').findOneAndUpdate({_id:id,desactiver:false},{$set:{desactiver:true}},(err,data)=>{
-      if(err) res.send('can not edit the immo')
-      else res.send (data)
-  })
+      let desactiver= req.params.desactiver
+      let x;
+      (desactiver == 0) ? x = 1 : x = 0
+  db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:x}},(err,data)=>{
+      (err) ? res.send('can not edit the contacts') : res.send (data)
   })
   
   
-
  
 
 })
 
-
+})
 const port = process.env.PORT || 3070
 app.listen(port, err => {
   err ? console.log("Server is down") : console.log("Server up and runing")
