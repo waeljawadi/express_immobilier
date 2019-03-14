@@ -75,11 +75,17 @@ class SingleImmo extends Component {
                   className="fa fa-trash-o fa-stack-1x fa-inverse"
                   onClick={this.deleteimmobilier}
                 />
-                >
+               
+               <i class="fa fa-users"></i>
+
               </span>
             </a>
           </td>
         </tr>
+
+
+
+
       </React.Fragment>
     )
   }

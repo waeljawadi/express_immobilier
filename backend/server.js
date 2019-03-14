@@ -110,8 +110,8 @@ app.get('/getimmo',(req,res)=>{
       let id=ObjectID(req.params.id)
       let desactiver= req.params.desactiver
       let x;
-      (desactiver == 0) ? x = 1 : x = 0
-  db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:x}},(err,data)=>{
+      (desactiver == 0) ? value = 1 : value = 0
+  db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:value}},(err,data)=>{
       (err) ? res.send('can not edit the contacts') : res.send (data)
   })
   
