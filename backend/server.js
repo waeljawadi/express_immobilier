@@ -2,15 +2,18 @@
 const express=require('express')
 
 const{ObjectID,MongoClient}=require('mongodb')
+const multer = require('multer')
+const cors = require('cors')
+
 
 const app=express()
 
 
 const bodyParser = require("body-parser")
 
-const multer = require('multer');
 
-const cors = require('cors');
+
+
 app.use(bodyParser.json())
 const MongoUrl = "mongodb://localhost:27017"
 const database = "expressimmo"
@@ -105,13 +108,13 @@ app.get('/getimmo',(req,res)=>{
     })
 
 
-    app.put('/showimmo/:id',(req,res)=>{
+    app.put('/isactive/:id/:desactiver',(req,res)=>{
       let id=ObjectID(req.params.id)
-  db.collection('immo').findOneAndUpdate({_id:id,desactiver},{$set:!{desactiver}}
-    ,(err,data)=>{
-      if(err) res.send('can not edit the immo')
-      else res.send (data)
-  })
+      let desactiver= req.params.desactiver
+      let x;
+      (desactiver == 0) ? value = 1 : value = 0
+  db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:value}},(err,data)=>{
+      (err) ? res.send('can not edit the contacts') : res.send (data)
   })
   
 
@@ -137,12 +140,11 @@ db.collection('immo').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>
 
 
   
-
  
 
 })
 
-
+})
 const port = process.env.PORT || 3070
 app.listen(port, err => {
   err ? console.log("Server is down") : console.log("Server up and runing")

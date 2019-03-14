@@ -13,9 +13,9 @@ class Listimmo extends Component {
     axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
   }
 
-//   componentDidUpdate=()=>{
-//     axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
-// }
+  componentDidUpdate=()=>{
+    axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+}
 
 
 
