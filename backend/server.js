@@ -8,7 +8,9 @@ const app=express()
 
 const bodyParser = require("body-parser")
 
+const multer = require('multer');
 
+const cors = require('cors');
 app.use(bodyParser.json())
 const MongoUrl = "mongodb://localhost:27017"
 const database = "expressimmo"
@@ -111,6 +113,28 @@ app.get('/getimmo',(req,res)=>{
   })
   })
   
+
+  //edit immobilier
+app.put('/edit_immo/:id',(req,res)=>{
+  let id=ObjectID(req.params.id)
+  let updated=req.body
+db.collection('immo').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>{
+  if(err) res.send('can not edit the immobilier')
+  else res.send (data)
+})
+})
+
+
+
+
+
+
+
+
+
+
+
+
   
 
  

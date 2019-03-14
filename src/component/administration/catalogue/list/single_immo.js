@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {connect} from 'react-redux'
 import './listimmo.css'
+import {Link} from 'react-router-dom'
 
 class SingleImmo extends Component {
    
@@ -80,7 +81,7 @@ axios.put(`/showimmo/${item._id}`)
                           <a href="#" className="table-link">
                             <span className="fa-stack">
                               <i className="fa fa-square fa-stack-2x" />
-                              <i className="fa fa-pencil fa-stack-1x fa-inverse" />
+                               <Link to={`/admin/catalogue/editimmo/${item._id}`}> <i className="fa fa-pencil fa-stack-1x fa-inverse" /></Link>
                             </span>
                           </a>
                           <a href="#" className="table-link danger">
