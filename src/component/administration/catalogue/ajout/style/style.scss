@@ -343,3 +343,20 @@ input[type="checkbox"]:checked + label:before {
 .notification-success {
   background-color: #83bb4d !important;
 }
+
+
+.thumbnail img {
+  max-width: 100% !important
+}
+
+input[type="file"]
+{
+  padding: 0px
+}
+
+.flexit
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
