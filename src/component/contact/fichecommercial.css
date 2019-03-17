@@ -1,0 +1,35 @@
+.commercialtof{
+    width: 80%;
+    height: 250px;
+    margin: 5%;
+}
+
+
+.contactvendeur2{
+    padding: 2%;
+    
+}
+.contactvendeur2 ul{
+    list-style-type: none;
+    color: #28a745;
+    font-size: 15px;
+}
+.contactvendeur2 p{
+    margin: 2%;
+    color: #afb0b1;
+    font-size: 14px;
+}
+.contactvendeur3{
+    padding: 3%;
+}
+
+.form-control:focus {
+    border-color:  greenyellow;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px greenyellow;
+}
+
+.boutcontact button{
+    border-radius: 50px;
+    width: 200px;
+    background-color: #28a745;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import "./contact.css"
+import "./contact.css";
+
 
 
 class Contact extends Component {
@@ -43,7 +44,7 @@ class Contact extends Component {
 </div>
 
 
-            
+         
             
 
         </div> );
