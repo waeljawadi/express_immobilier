@@ -116,7 +116,7 @@ app.get('/getimmo',(req,res)=>{
   db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:value}},(err,data)=>{
       (err) ? res.send('can not edit the contacts') : res.send (data)
   })
-  
+})
 
   //edit immobilier
 app.put('/edit_immo/:id',(req,res)=>{
@@ -129,12 +129,44 @@ db.collection('immo').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>
 })
 
 
+//Actualite
 
+//add actualite
+app.post("/postactu", (req, res) => {
+  let newactu = req.body
+  db.collection('actu').insertOne(newactu, (err, data) => {
+    err ? res.send("cant not add list") : res.send(data)
+  })
+})
 
+app.get('/getactu',(req,res)=>{
 
+  db.collection('actu').find().toArray((err,data)=>{
+       if(err) res.send('can not get list') 
+      else res.send(data)
+  })   
+  })
 
+//remove actualite
 
+app.delete('/deleteactu/:id',(req,res)=>{
+  let id=ObjectID(req.params.id)
+  db.collection('actu').findOneAndDelete({_id:id},(err,data)=>{
+      if (err) res.send('can not delete actualite')
+      else res.send(data)
+  })
+})
 
+//Edit actualite
+
+app.put('/editactu/:id',(req,res)=>{
+  let id=ObjectID(req.params.id)
+  let updated=req.body
+db.collection('actu').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>{
+  if(err) res.send('can not edit the actualite')
+  else res.send (data)
+})
+})
 
 
 
@@ -142,7 +174,7 @@ db.collection('immo').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>
   
  
 
-})
+
 
 })
 const port = process.env.PORT || 3070

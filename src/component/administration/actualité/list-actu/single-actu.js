@@ -1,39 +1,20 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import {connect} from 'react-redux'
-import './listimmo.css'
+import axios from 'axios'
+import '../../catalogue/list/listimmo.css'
 import {Link} from 'react-router-dom'
+import ActionButton from 'antd/lib/modal/ActionButton';
 
 
-class SingleImmo extends Component {
-  deleteimmobilier = () => {
+class Actu extends Component {
+
+  deleteactualite = () => {
     const { item } = this.props
     axios
-      .delete(`/deleteimmo/${item._id}`)
-      .then(() => this.props.deleteImmoReducer(item._id))
+      .delete(`/deleteactu/${item._id}`)
+      .then(() => this.props.deleteActuReducer(item._id))
       .catch(err => alert(err))
   }
-  statue = () => {
-    if (this.props.item.vendu == 1) return "vendu"
-    else return "disponible"
-  }
-
-
-//   componentDidUpdate=()=>{
-//     axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
-// }
-
-
-  isactive=()=>
-    {
-      const {item}=this.props
-       axios.put(`/isactive/${item._id}/${item.desactiver}`) 
-      .then() 
-      .catch()
-    }
-
-
-
 
 
 
@@ -42,33 +23,33 @@ class SingleImmo extends Component {
     return (
       <React.Fragment>
         <tr>
-          <td>
+          <td style={{ width: "15%" }} >
             <img className="logoliste" src="https://expressimmoprestige.be/images/logofb.jpg" alt />
            
-              <p>{item.title}</p>
+              <p></p>
         
             <span className="user-subhead">Admin</span>
           </td>
-          <td>{item.date_construction}</td>
-          <td className="text-center">
-            <span className="label label-default">{this.statue()} </span>
+          <td className="text-center" style={{ width: "15%" }}>{item.date_postulation}</td>
+          <td className="text-left" style={{ width: "45%" }}>
+            <span className="label label-default" >
+           {item.dcourte}
+            </span>
           </td>
-          <td>
-            {item.adresse}
-          </td>
-          <td style={{ width: "20%" }}>
+         
+          <td className="text-center" style={{ width: "15%" }}>
             <a href="#" className="table-link">
               <span class="fa-stack">
                 <i class="fa fa-camera fa-stack-1x" />
                 <i class="fa fa-ban fa-stack-2x" 
-                onClick={this.isactive} 
+                
                 />
               </span>
             </a>
             <a href="#" className="table-link">
               <span className="fa-stack">
                 <i className="fa fa-square fa-stack-2x" />
-                <Link to={`/admin/catalogue/editimmo/${item._id}`}> <i className="fa fa-pencil fa-stack-1x fa-inverse" /></Link>
+                <Link to={`/admin/actualité/editactu/${item._id}`}> <i className="fa fa-pencil fa-stack-1x fa-inverse" /></Link>
               </span>
             </a>
             <a href="#" className="table-link danger">
@@ -76,7 +57,7 @@ class SingleImmo extends Component {
                 <i className="fa fa-square fa-stack-2x" />
                 <i
                   className="fa fa-trash-o fa-stack-1x fa-inverse"
-                  onClick={this.deleteimmobilier}
+                  onClick={this.deleteactualite}
                 />
                
                
@@ -94,14 +75,19 @@ class SingleImmo extends Component {
     )
   }
 }
+
+
+
+
 const mapDispatchToProps = dispatch => {
-  return {
-    deleteImmoReducer: _id => {
-      dispatch({
-        type: "REMOVE_IMMO",
-        _id
-      })
+    return {
+      deleteActuReducer: _id => {
+        dispatch({
+          type: "REMOVE_ACTU",
+          _id
+        })
+      }
     }
   }
-}
-export default connect(null, mapDispatchToProps)(SingleImmo)
+  export default connect(null, mapDispatchToProps)(Actu)
+  
