@@ -1,49 +1,91 @@
-div#headeravis {
-    background-color: #83bb4d;
+.form {
+  background: #e6e6e6;
+  border-radius: 8px;
+  /* box-shadow: 0 0 40px -10px #000; */
+  margin: calc(50vh - 220px) auto;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
 }
 
-p.prate1 {
-    margin-left: 39px;
-    margin-top:9px;
-    font-size: 15px;
-    color: white
-}
-p.prate2 {
-    margin-left: 39px;
-    font-size: 15px;
-    color: white
-}
-h4#titleavis {
-    font-weight: bold;
+.form h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c;
 }
 
-p#textavis {
-    font-size: 13px;
-    color: lightgrey;
-    margin-left: 22px;
+.form input {
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
 }
 
-.dv-star-rating {
-    font-size: 36px;
-    background-color: none;
-    margin-left: 17px;
+.form input:focus {
+  border-bottom: 2px solid #78788c;
 }
 
-label#areaavis {
-    color: lightslategrey;
-    margin-left: 21px;
+.form p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a;
 }
 
-div#aviss {
-    width: 50%;
-    margin-left: 26%;
+.form button {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-button.btn.btn-success.btn-lg.btnpost {
-   
-    left: 88%;
-    position: relative;
-    border: none;
-    background-color: #83bb4d;
-   
+.form button:hover {
+  background: #78788c;
+  color: #fff;
 }
+
+.form span {
+  margin: 0 5px 0 15px;
+}
+
+.form .dv-star-rating-star i {
+  font-size: 4em;
+}
+
+.form .addavis {
+  width: auto;
+  float: right;
+  margin-top: 25px;
+  border: 2px solid;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 2em;
+  border: 1px solid #091f35fd;
+  color: #445566c4;
+}
+
+.form .addavis:enabled:hover {
+  background: #82bb4e;
+  border: 1px solid #82bb4e;
+  color: white;
+}
+/*# sourceMappingURL=avis.css.map */

@@ -105,6 +105,13 @@ app.get('/getimmo',(req,res)=>{
         })
     })
 
+    app.post("/postavis", (req, res) => {
+      let newavis = req.body
+      db.collection("avis").insertOne(newavis, (err, data) => {
+        err ? res.send("cant not add list") : res.send(data)
+      })
+    })
+   
 
     app.put('/isactive/:id/:desactiver',(req,res)=>{
       let id=ObjectID(req.params.id)
@@ -116,7 +123,6 @@ app.get('/getimmo',(req,res)=>{
   })
   
   
- 
 
 })
 
