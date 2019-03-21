@@ -12,6 +12,10 @@ const immoReducer=(state=[],action)=>
       return (
           state.filter(el=>el._id!==action._id)
       )
+      case 'EDIT_IMMO':
+      return (
+          state.map(el=>el._id===action.editimmo._id? el=action.editimmo:el)
+      )
      
 
       default :

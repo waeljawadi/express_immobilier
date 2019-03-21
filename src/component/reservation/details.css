@@ -114,3 +114,11 @@ div#map {
     width: 100%;
     opacity: 0.7
 }
+
+.contactsform {
+    width: 84%;
+    margin-left: 71px;
+    margin-top: 53px;
+    border: 1px solid;
+    padding: 8px;
+}

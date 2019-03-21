@@ -104,9 +104,9 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-plus" aria-hidden="true"></i> Ajouter</a></li>
-                            <li><a href="pages/charts/morris.html"><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Editer</a></li>
-                            <li><a href="pages/charts/flot.html"><i className="fa fa-trash-o" aria-hidden="true"></i> Supprimer</a></li>
+                            <li><Link to="/admin/actualite/listactu"><i className="fa fa-list-ol" aria-hidden="true"></i> Liste actualité</Link></li>
+                            <li><Link to="/admin/actualité/ajout"><i className="fa fa-plus" aria-hidden="true"></i>Ajouter</Link></li>
+                            
                            
                         </ul>
                         </li>

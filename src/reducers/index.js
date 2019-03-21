@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
 import immoReducer from './catalogueReducer'
-import ratereducer from './rateReducer'
+import actuReducer from './actuReducer'
 
-export default combineReducers({immoReducer,ratereducer})
+export default combineReducers({immoReducer,actuReducer})

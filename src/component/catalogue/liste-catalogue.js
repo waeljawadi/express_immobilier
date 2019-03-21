@@ -2,155 +2,29 @@ import React, { Component } from 'react';
 import Catalogue from './catalogue'
 import './list-catalogue.css'
 import SearchPage from './search-catalogue';
+import {connect} from 'react-redux'
+import axios from 'axios'
 
 
-const tab=[
-    {image:"http://modern.realhomes.io/wp-content/uploads/2017/06/property-01-exterior-680x510.jpg",
-     title:"Villa in Hoolywood",
-     description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-     surface:"120",
-     prix: 210000 
-    },
-    {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-     title:"Villa in Newyork",
-     description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-     surface:"120",
-     prix: 210000
-    },
-    {image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-     title:"Villa in Boston",
-     description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-     surface:"120",
-     prix: 210000
-    },
-    {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-     title:"Villa",
-     description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-     surface:"120",
-     prix: 210000
-    },
-    {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-03-exterior-680x510.jpg",
-     title:"Villa",
-     description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-     surface:"120",
-     prix: 210000
-    },
-    {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-    title:"Villa in Newyork",
-    description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-    surface:"120",
-    prix: 210000
-   },
-   {image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-    title:"Villa in Boston",
-    description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-    surface:"120",
-    prix: 210000
-   },
-   {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-    title:"Villa",
-    description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-    surface:"120",
-    prix: 210000
-   },
-   {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-   title:"Villa in Newyork",
-   description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-   surface:"120",
-   prix: 210000
-  },
-  {image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-   title:"Villa in Boston",
-   description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-   surface:"120",
-   prix: 210000
-  },
-  {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-   title:"Villa",
-   description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-   surface:"120",
-   prix: 210000
-  },
-  {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-  title:"Villa in Newyork",
-  description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-  surface:"120",
-  prix: 210000
- },
- {image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-  title:"Villa in Boston",
-  description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-  surface:"120",
-  prix: 210000
- },
- {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-  title:"Villa",
-  description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-  surface:"120",
-  prix: 210000
- },
- {image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
- title:"Villa in Newyork",
- description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
- surface:"120",
- prix: 210000
-},
-{image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
- title:"Villa in Boston",
- description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
- surface:"120",
- prix: 210000
-},
-{image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
- title:"Villa",
- description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
- surface:"120",
- prix: 210000
-},
-{image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-title:"Villa in Newyork",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-},
-{image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-title:"Villa in Boston",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-},
-{image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-title:"Villa",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-},
-{image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-02-exterior-680x510.jpg",
-title:"Villa in Newyork",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-},
-{image:"https://media-cdn.tripadvisor.com/media/vr-splice-j/05/96/ec/e9.jpg",
-title:"Villa in Boston",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-},
-{image:"http://modern.realhomes.io/wp-content/uploads/2015/07/property-05-exterior-680x510.jpg",
-title:"Villa",
-description:"Enchanting three bedroom, three bath home with spacious one bedroom,…",
-surface:"120",
-prix: 210000
-}
-   
-]
+
 class ListeCatalogue extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+
+
+    componentDidMount=()=>{
+        axios.get('/getimmofront').then((res)=>this.props.updateImmoReducer(res.data))
+      }
+    
+      componentDidUpdate=()=>{
+        axios.get('/getimmofront').then((res)=>this.props.updateImmoReducer(res.data))
+       
+    }
+    
     render() { 
+        const {listimmo}= this.props
         return ( <div className="toplist">
             <div>
             <center>
@@ -158,7 +32,7 @@ class ListeCatalogue extends Component {
             </center>
             </div>
              <div className="row ctlg container-fluid">
-        { tab.map((el,index)=><div className="col-lg-4 col-md-6 col-sm-12 ctlg1"><Catalogue item={el} key={index}  /> 
+        { listimmo.map((el,index)=><div className="col-lg-4 col-md-6 col-sm-12 ctlg1"><Catalogue item={el} key={index}  /> 
         </div>)}
         
       </div>
@@ -166,4 +40,24 @@ class ListeCatalogue extends Component {
     }
 }
  
-export default ListeCatalogue;
+const mapStateToProps=(state)=>
+{
+    return {
+        listimmo:state.immoReducer
+    }
+}
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        updateImmoReducer:listimmo=>
+        {
+            dispatch({
+                type:'UPDATE_IMMO',
+                listimmo            })
+        }
+    }
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ListeCatalogue);

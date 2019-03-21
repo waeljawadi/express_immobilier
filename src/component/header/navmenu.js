@@ -44,7 +44,7 @@ class Navmenu extends Component {
                         </li>
                        
                         <li className="nav-item">
-                          <Link  to='/reservation' className="nav-link">
+                          <Link  to='/detailactualite' className="nav-link">
                             Vendu
                           </Link>
                         </li>
