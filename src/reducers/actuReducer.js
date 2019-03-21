@@ -13,7 +13,7 @@ const actuReducer=(state=[],action)=>
 
       )
 
-      case 'EDIT_IMMO':
+      case 'EDIT_ACTU':
       return(
           state.map(el=>el._id===action.editactu._id ? el=action.editactu : el)
       )

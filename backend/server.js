@@ -169,6 +169,27 @@ db.collection('actu').findOneAndUpdate({_id:id},{$set:{...updated}},(err,data)=>
 })
 
 
+//get reservation
+app.get('/getreservation/:id',(req,res)=>{
+  let id=ObjectID(req.params.id)
+  db.collection('immo').find({_id:id}).toArray((err,data)=>{
+       if(err) res.send('can not get item') 
+      else res.send(data)
+      console.log(data)
+  })   
+  })
+
+
+//get detail article
+app.get('/getdetailactualite/:id',(req,res)=>{
+  let id=ObjectID(req.params.id)
+  db.collection('actu').find({_id:id}).toArray((err,data)=>{
+       if(err) res.send('can not get article') 
+      else res.send(data)
+      console.log(data)
+  })   
+  })
+
 
 
   

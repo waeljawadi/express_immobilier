@@ -204,7 +204,7 @@ class EditActualite extends Component {
             className="btn btn-success"
             onClick={this.editactualite}
           >
-            Ajouter Article
+            Editer Article
           </button>
          
 
