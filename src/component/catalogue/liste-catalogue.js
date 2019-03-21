@@ -15,11 +15,11 @@ class ListeCatalogue extends Component {
 
 
     componentDidMount=()=>{
-        axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+        axios.get('/getimmofront').then((res)=>this.props.updateImmoReducer(res.data))
       }
     
       componentDidUpdate=()=>{
-        axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+        axios.get('/getimmofront').then((res)=>this.props.updateImmoReducer(res.data))
        
     }
     

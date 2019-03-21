@@ -99,6 +99,27 @@ app.get('/getimmo',(req,res)=>{
     })
 
 
+
+    app.get('/getimmofront',(req,res)=>{
+
+      db.collection('immo').find({"desactiver":0}).toArray((err,data)=>{
+           if(err) res.send('can not get list') 
+          else res.send(data)
+      })   
+      })
+
+
+
+      app.get('/getimmoavant',(req,res)=>{
+
+        db.collection('immo').find({"enavant":1}).toArray((err,data)=>{
+             if(err) res.send('can not get list') 
+            else res.send(data)
+        })   
+        })
+
+
+
     app.delete('/deleteimmo/:id',(req,res)=>{
         let id=ObjectID(req.params.id)
         db.collection('immo').findOneAndDelete({_id:id},(err,data)=>{
@@ -111,10 +132,9 @@ app.get('/getimmo',(req,res)=>{
     app.put('/isactive/:id/:desactiver',(req,res)=>{
       let id=ObjectID(req.params.id)
       let desactiver= req.params.desactiver
-      let x;
       (desactiver == 0) ? value = 1 : value = 0
   db.collection('immo').findOneAndUpdate({_id:id},{$set:{desactiver:value}},(err,data)=>{
-      (err) ? res.send('can not edit the contacts') : res.send (data)
+      (err) ? res.send('can not desactiv the contacts') : res.send (data)
   })
 })
 

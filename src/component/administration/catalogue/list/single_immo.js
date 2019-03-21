@@ -14,8 +14,8 @@ class SingleImmo extends Component {
       .catch(err => alert(err))
   }
   statue = () => {
-    if (this.props.item.vendu == 1) return "vendu"
-    else return "disponible"
+    if (this.props.item.desactiver == 0) return "disponible"
+    else return "indisponible"
   }
 
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './details.css';
 import axios from 'axios'
 import { withRouter } from 'react-router-dom';
+import Contactreservation from './contactreservation'
 ///import queryString from 'query-string';
 
 const BASE_URL = "http://localhost:3000/"
@@ -99,11 +100,32 @@ class Details extends Component {
             <hr></hr>    
             <div className="map" id="map">
             </div>
-</div>
+            </div>
+
+            <div className="ligne6">
+
+           <Contactreservation/>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 part2">
             <img src="http://www.investimmoclub.com/wp-content/uploads/2015/07/Infographic1-InvestissementsAlternatifs-1.png" className="imgres"/>           
             </div>
+
+
+
         </div>
 )}
         </React.Fragment> );

@@ -22,23 +22,7 @@ class Ajout extends Component {
     super(props)
     {
 
-      this.state = { 
-       // _id: Math.trunc(Date.now() * Math.random() * Math.random()),
-        title : '',
-        prix : '' ,
-        surface : '',
-        date_construction:'',
-        type_immobilier:'',
-        adresse: '',
-        ville:'',
-        dcourte:'',
-        dcomplet:'',
-        vendu: 0,
-        nouveaute: 0,
-        desactiver: 0,
-        enavant: 0,
-       }
-
+      
       this.state = {
         title: "",
         prix: "",
@@ -49,14 +33,14 @@ class Ajout extends Component {
         ville: "",
         dcourte: "",
         dcomplet: "",
-        vendu: false,
-        nouveaute: false,
+        vendu: 0,
+        nouveaute: 0,
         desactiver: 0,
-        enavant: false,
-        garage: false,
-        jardin: false,
-        cuizine: false,
-        salledebain: false,
+        enavant: 0,
+        garage: 0,
+        jardin: 0,
+        cuizine: 0,
+        salledebain: 0,
         latitude: "",
         longitude: "",
         images: [],
