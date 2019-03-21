@@ -76,7 +76,7 @@ class Avis extends Component {
                                 ""
                               )
                             )
-                       }
+                        }
 
   render() {
     return (
