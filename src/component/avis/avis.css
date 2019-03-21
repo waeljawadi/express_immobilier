@@ -2,7 +2,7 @@
   background: #e6e6e6;
   border-radius: 8px;
   /* box-shadow: 0 0 40px -10px #000; */
-  margin: calc(50vh - 220px) auto;
+  margin: 20px auto;
   padding: 20px 30px;
   max-width: calc(100vw - 40px);
   -webkit-box-sizing: border-box;
@@ -87,5 +87,48 @@
   background: #82bb4e;
   border: 1px solid #82bb4e;
   color: white;
+}
+
+/**********AVIS CLIENT******************/
+.ok h4 {
+  padding-left: 0px;
+}
+
+.ok .review {
+  display: block;
+  margin: 1rem;
+  padding: 1.1rem;
+  max-width: unset;
+  border-radius: 3px;
+  border: 1px solid #bfbfbf;
+  background-color: #efeded;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.ok .review .ok .review__title {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.ok .review .ok .review__score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.ok .review .ok .review__score .score {
+  font-size: 2rem;
+}
+
+.ok .review .ok .review__score .score-stars {
+  margin-left: 0.8rem;
+}
+
+.ok .review .ok .review__text {
+  line-height: 1.45;
 }
 /*# sourceMappingURL=avis.css.map */

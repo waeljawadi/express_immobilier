@@ -3,33 +3,80 @@ import { Component } from "react"
 import "./avis.css"
 import StarRatingComponent from "react-star-rating-component"
 import axios from "axios"
+import AvisValide from "./avisvalide"
+import { NotificationContainer, NotificationManager } from "react-notifications"
+
 
 class Avis extends Component {
   constructor(props) {
     super(props)
-    this.state = { rating: 0, name: "", email: "", message: "", disabled: true, enattente:1 }
+    this.state = {
+      rating: 1,
+      name: "", 
+      email: "",
+      message: "",
+      disabled: true,
+      enattente: 1,
+      allavis: ""
+    }
   }
   onStarClick = (nextValue, prevValue, name) =>
     this.setState({ rating: nextValue })
   handleOnChange = event => {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    this.setState(
-      { [event.target.name]: event.target.value }, () => {
-        if (re.test(this.state.email) && (this.state.name.length > 6) && (this.state.message.length > 6)) {
-          this.setState({ disabled: false })
-        } else {
-          this.setState({ disabled: true })
-        }
+    this.setState({ [event.target.name]: event.target.value }, () => {
+      if (
+        re.test(this.state.email) &&
+        this.state.name.length > 6 &&
+        this.state.message.length > 6
+      ) {
+        this.setState({ disabled: false })
+      } else {
+        this.setState({ disabled: true })
       }
-    )
+    })
   }
 
+  componentDidMount = () => {
+    axios.get("/getavis").then(res => this.setState({ allavis: res.data }))
+  }
 
   insert_avis = () => {
-    axios
-      .post("/postavis", { ...this.state })
-      .then(res => console.log('ok')).catch(err => console.log(err))
-  }
+                        const {
+                          rating,
+                          name,
+                          email,
+                          message,
+                          disabled,
+                          enattente
+                        } = {
+                          ...this.state
+                        }
+                        axios
+                          .post("/postavis", {
+                            rating,
+                            name,
+                            email,
+                            message,
+                            disabled,
+                            enattente
+                          })
+                          .then(response => (
+                            NotificationManager.success("Votre avis est soumis", "", 3000),
+                            this.setState({ rating:'',
+                              name:'',
+                              email:'',
+                              message:'',
+                              disabled:'',
+                              enattente:''})
+                            ) )
+                            .catch(err =>
+                              NotificationManager.error(
+                                "Une erreur lors d'ajout, essayer une autre fois",
+                                ""
+                              )
+                            )
+                      }
 
   render() {
     return (
@@ -82,6 +129,16 @@ class Avis extends Component {
             onClick={this.insert_avis}
           />
         </form>
+<div className="row">
+        {[...this.state.allavis].map((item, index) => (
+          <div className="col-lg-6">
+ <AvisValide key={index} item={item} />
+ </div>
+        ))}
+      
+        </div>
+        <NotificationContainer />
+
       </React.Fragment>
     )
   }

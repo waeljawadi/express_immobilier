@@ -4,7 +4,7 @@
     background: #e6e6e6;
    border-radius: 8px;
    /* box-shadow: 0 0 40px -10px #000; */
-   margin: calc(50vh - 220px) auto;
+   margin: 20px auto;
    padding: 20px 30px;
    max-width: calc(100vw - 40px);
    box-sizing: border-box;
@@ -81,4 +81,53 @@
    color: white
   }
  }
- 
+ /**********AVIS CLIENT******************/
+
+
+ // Variables
+$grey: #bfbfbf;
+$light-grey: #efeded;
+$black: #000000;
+$radius-value: 3px;
+$box-max-width: unset;
+$system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI",
+ Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// General (not mandatory) rules
+.ok{
+h4 { padding-left:0px}
+// Review component
+.review {
+  display:block;
+  margin: 1rem;
+  padding: 1.1rem;
+  max-width: $box-max-width;
+  border-radius: $radius-value;
+  border: 1px solid $grey;
+  background-color: $light-grey;
+  font-family: $system-fonts;
+
+  #{&} &__title {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+  
+  #{&} &__score {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  
+    .score {
+      //margin-right: 1rem;
+      font-size: 2rem;
+    }
+  
+    .score-stars {
+      margin-left: 0.8rem;
+    }
+  }
+  #{&} &__text {
+    line-height: 1.45;
+  }
+}
+}
