@@ -50,7 +50,7 @@ componentDidUpdate=()=>{
      
         </div>
 
-     
+  
       </React.Fragment>
     )
   }
