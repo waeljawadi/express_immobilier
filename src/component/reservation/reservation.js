@@ -7,16 +7,9 @@ class Reservation extends Component {
     }
     render() { 
         return ( <div>
-
-
             <Details/>
-
-
-            </div>
-            
-            
+            </div>           
              );
     }
 }
- 
 export default Reservation;

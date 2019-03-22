@@ -8,21 +8,34 @@ import axios from "axios"
 import { Redirect } from "react-router-dom"
 import "react-notifications/lib/notifications.css"
 import { NotificationContainer, NotificationManager } from "react-notifications"
-
-
-
 import ReactTooltip from "react-tooltip"
+import {connect} from 'react-redux'
 
-import ReactFancyBox from "react-fancybox"
-import "react-fancybox/lib/fancybox.css"
 
-const BASE_URL = "http://localhost:3000/"
-class Ajout extends Component {
+
+
+class EditImmo extends Component {
   constructor(props) {
     super(props)
     {
 
-      
+      this.state = { 
+       // _id: Math.trunc(Date.now() * Math.random() * Math.random()),
+        title : '',
+        prix : '' ,
+        surface : '',
+        date_construction:'',
+        type_immobilier:'',
+        adresse: '',
+        ville:'',
+        dcourte:'',
+        dcomplet:'',
+        vendu: 0,
+        nouveaute: 0,
+        desactiver: 0,
+        enavant: 0,
+       }
+
       this.state = {
         title: "",
         prix: "",
@@ -33,14 +46,14 @@ class Ajout extends Component {
         ville: "",
         dcourte: "",
         dcomplet: "",
-        vendu: 0,
-        nouveaute: 0,
-        desactiver: 0,
-        enavant: 0,
-        garage: 0,
-        jardin: 0,
-        cuizine: 0,
-        salledebain: 0,
+        vendu: false,
+        nouveaute: false,
+        desactiver: false,
+        enavant: false,
+        garage: false,
+        jardin: false,
+        cuizine: false,
+        salledebain: false,
         latitude: "",
         longitude: "",
         images: [],
@@ -50,73 +63,9 @@ class Ajout extends Component {
 
     }
   }
-  selectImages = event => {
-    let images = []
-    for (var i = 0; i < event.target.files.length; i++) {
-      images[i] = event.target.files.item(i)
-    }
-    images = images.filter(image => image.name.match(/\.(jpg|jpeg|png|gif)$/))
-    let message = `${images.length} valid image(s) selected`
-    this.setState({ images, message })
-  }
-  uploadImages = () => {
-    const uploaders = this.state.images.map(image => {
-      const data = new FormData()
-      data.append("image", image, image.name)
-      // Make an AJAX upload request using Axios
-      return axios.post(BASE_URL + "upload", data).then(response => {
-        this.setState({
-          imageUrls: [response.data.imageUrl, ...this.state.imageUrls]
-        })
-      })
-    })
-    // Once all the files are uploaded
-    axios
-      .all(uploaders)
-      .then(() => {
-        console.log("done")
-      })
-      .catch(err => alert(err.message))
-  }
-  insert_immo = () => {
-    axios
-      .post("/postimmo", { ...this.state })
-      .then(
-        response => (
-          NotificationManager.success("Ajouter avec success", "", 3000),
-          window.setTimeout(() => {
-            NotificationManager.info("Vous pouvez ajouter une autre immobilier")
-          }, 1500),
-          this.setState({
-            title: "",
-            prix: "",
-            surface: "",
-            date_construction: "",
-            type_immobilier: "",
-            adresse: "",
-            ville: "",
-            dcourte: "",
-            dcomplet: "",
-            vendu: false,
-            nouveaute: false,
-            desactiver: 0,
-            enavant: false,
-            garage: false,
-            jardin: false,
-            cuizine: false,
-            salledebain: false,
-            latitude: "",
-            longitude: ""
-          })
-        )
-      )
-      .catch(err =>
-        NotificationManager.error(
-          "Une erreur lors d'ajout, essayer une autre fois",
-          ""
-        )
-      )
-  }
+  
+  
+  
   handleNumbers = evt => {
     this.setState({
       [evt.target.name]: evt.target.validity.valid
@@ -163,6 +112,42 @@ class Ajout extends Component {
     return valide
 
   }
+
+
+  componentDidMount() {
+        
+    this.setState({
+        ...this.props.listimmo.filter((el)=>(el._id==this.props.match.params.id))[0]
+    })
+}
+    editimmobilier=()=>
+    {
+       axios.put(`/edit_immo/${this.state._id}`,{
+           title:this.state.title,
+        prix:this.state.prix,
+        surface:this.state.surface,
+        date_construction:this.state.date_construction,
+        type_immobilier:this.state.type_immobilier,
+        adresse:this.state.adresse,
+        ville:this.state.ville,
+        dcourte:this.state.dcourte,
+        dcomplet:this.state.dcomplet,
+        vendu:this.state.vendu,
+        nouveaute:this.state.nouveaute,
+        desactiver:this.state.desactiver,
+        enavant:this.state.enavant,
+        garage:this.state.garage,
+        jardin:this.state.jardin,
+        cuizine:this.state.cuizine,
+        salledebain:this.state.salledebain,
+        latitude:this.state.latitude,
+        longitude:this.state.longitude
+     }) 
+      .then(()=>this.props.editImmoReducer({...this.state})) 
+      .catch((err)=>alert(err))
+    }
+
+
   render() {
     return (
       <React.Fragment>
@@ -173,7 +158,6 @@ class Ajout extends Component {
               <Tab>Description</Tab>
               <Tab>Etiquette</Tab>
               <Tab>Autre options</Tab>
-              <Tab>Images</Tab>
             </TabList>
             <TabPanel>
               <div className="container ajouter">
@@ -440,63 +424,33 @@ class Ajout extends Component {
                 <label for="salledebain">Salle de bain</label>
               </div>
             </TabPanel>
-            <TabPanel>
-              <input
-                className="form-control "
-                type="file"
-                onChange={this.selectImages}
-                multiple
-              />
-              <p className="text-info">{this.state.message}</p>
-              <button
-                className="btn btn-primary"
-                value="Submit"
-                onClick={this.uploadImages}
-              >
-                Upload all pictures
-              </button>
-              <p />
-              <div className="row">
-                {this.state.imageUrls.map((url, i) => (
-                  <div className="col-lg-2 flexit" key={i}>
-                    {/* <img
-                        src={BASE_URL + url}
-                        className="img-rounded img-responsive"
-                        alt="not available"
-                      /> */}
-
-                    <ReactFancyBox
-                      thumbnail={BASE_URL + url}
-                      image={BASE_URL + url}
-                    />
-
-                    <p />
-
-                    <br />
-                  </div>
-                ))}
-              </div>
-              <p />
-
-              {/* <div className="col-lg-2">
-                <p>
-                  <img src={BASE_URL + `images/uploads/1552498102274-53121645_1963064374001345_6607211026255446016_n.jpg`}  />
-                </p>
-              </div> */}
-            </TabPanel>
+            
           </Tabs>
           <button
             type="submit"
             disabled={!this.validation()}
             className="btn btn-success"
-            onClick={this.insert_immo}
+            onClick={this.editimmobilier}
           >
-            Ajouter immobilier
+            Edit immobilier
           </button>
-         
-
-
         </div>
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
 
         <NotificationContainer />
         <ReactTooltip />
@@ -504,4 +458,56 @@ class Ajout extends Component {
     )
   }
 }
-export default Ajout
+
+const mapStateToProps=(state)=>
+{
+    return {
+        listimmo:state.immoReducer
+    }
+}
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        editImmoReducer:editimmo=>
+        {
+            dispatch({
+                type:'EDIT_IMMO',
+                editimmo
+            })
+        }
+    }
+}
+
+
+ 
+export default connect(mapStateToProps,mapDispatchToProps)(EditImmo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

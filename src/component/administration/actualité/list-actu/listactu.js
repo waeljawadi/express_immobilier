@@ -1,21 +1,20 @@
 import React from "react"
 import { Component } from "react"
-import SingleImmo from './single_immo'
+import Actu from './single-actu'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
 import _css_ from "../../style/style.module.css"
-import './listimmo.css'
+import '../../catalogue/list/listimmo.css'
 
 
-class Listimmo extends Component {
+class ListActu extends Component {
   componentDidMount=()=>{
-    axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
+    axios.get('/getactu').then((res)=>this.props.updateActuReducer(res.data))
   }
 
   componentDidUpdate=()=>{
-    axios.get('/getimmo').then((res)=>this.props.updateImmoReducer(res.data))
-   
+    axios.get('/getactu').then((res)=>this.props.updateActuReducer(res.data))
 }
 
 
@@ -24,7 +23,7 @@ class Listimmo extends Component {
 
 
   render() {
-    const {listimmo}= this.props
+    const {listactu}= this.props
 
     return (
       <React.Fragment>
@@ -40,16 +39,14 @@ class Listimmo extends Component {
                       <tr>
                         <th><span>User</span></th>
                         <th><span>Created</span></th>
-                        <th className="text-center"><span>Status</span></th>
-                        <th><span>Adresse</span></th>
-                        <th>&nbsp;</th>
+                        <th className="text-center"><span>Description Courte</span></th>
                       </tr>
                     </thead>
                     <tbody>
                       
                        
 
-                    { listimmo.map((el,index)=><SingleImmo item={el} key={index}  /> 
+                    { listactu.map((el,index)=><Actu item={el} key={index}  /> 
         )}
                        
                      
@@ -74,21 +71,21 @@ class Listimmo extends Component {
 const mapStateToProps=(state)=>
 {
     return {
-        listimmo:state.immoReducer
+        listactu:state.actuReducer
     }
 }
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        updateImmoReducer:listimmo=>
+        updateActuReducer:listactu=>
         {
             dispatch({
-                type:'UPDATE_IMMO',
-                listimmo            })
+                type:'UPDATE_ACTU',
+                listactu            })
         }
     }
 }
 
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Listimmo);
+export default connect(mapStateToProps,mapDispatchToProps)(ListActu);

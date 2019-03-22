@@ -1,0 +1,52 @@
+.jumbotron {
+    
+    background-color: #ffffff;
+    margin-top: 35px;
+    box-shadow:0 20px 50px 0 rgba(0,0,0,.13);
+    
+}
+p.courte {
+    font-weight: bold;
+    margin-top: 18px;
+    font-size: 13px
+}
+p.lead {
+    font-size: 14px;
+    text-align: justify;
+    margin-top: 26px;
+    font-weight: bold;
+}
+img.imgactu {
+    margin-top: 19px;
+    width: 100%;
+    height: 400px;
+}
+
+button.btn.btn-success.btn-lg.Ripple-parent {
+    border: none;
+    background-color: #83bb4d;
+    margin-left: -16px;
+}
+i.fa.fa-twitter-square {
+    font-size: 32px;
+    margin-right: 39px;
+    color: blue;
+}
+i.fa.fa-facebook-square {
+    margin-right: 38px;
+    font-size: 32px;
+    color: blue;
+}
+
+i.fa.fa-google-plus-square {
+    font-size: 32px;
+    color: red;
+    margin-right: 6px
+}
+.reseau {
+    text-align: right;
+    margin-bottom: -41px;
+}
+h1.h1-responsive {
+    color: #83bb4d;
+}
