@@ -10,15 +10,6 @@ class Login extends Component {
           <h2 className="login-header">Log in</h2>
           <form className="login-container">
             <div className="center-on-page">
-              <div className="select">
-                <select name="slct" id="slct">
-                  <option disabled selected>
-                    Se connecter en tant que{" "}
-                  </option>
-                  <option value="1">Super Administrateur</option>
-                  <option value="2">Administrateur</option>
-                </select>
-              </div>
             </div>
             <p>
               <input type="email" placeholder="Email" />
