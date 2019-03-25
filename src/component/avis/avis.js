@@ -6,13 +6,12 @@ import axios from "axios"
 import AvisValide from "./avisvalide"
 import { NotificationContainer, NotificationManager } from "react-notifications"
 
-
 class Avis extends Component {
   constructor(props) {
     super(props)
     this.state = {
       rating: 1,
-      name: "", 
+      name: "",
       email: "",
       message: "",
       disabled: true,
@@ -42,41 +41,38 @@ class Avis extends Component {
   }
 
   insert_avis = () => {
-                        const {
-                          rating,
-                          name,
-                          email,
-                          message,
-                          disabled,
-                          enattente
-                        } = {
-                          ...this.state
-                        }
-                        axios
-                          .post("/postavis", {
-                            rating,
-                            name,
-                            email,
-                            message,
-                            disabled,
-                            enattente
-                          })
-                          .then(response => (
-                            NotificationManager.success("Votre avis est soumis", "", 3000),
-                            this.setState({ rating:'',
-                              name:'',
-                              email:'',
-                              message:'',
-                              disabled:'',
-                              enattente:1})
-                            ) )
-                            .catch(err =>
-                              NotificationManager.error(
-                                "Une erreur lors d'ajout, essayer une autre fois",
-                                ""
-                              )
-                            )
-                      }
+    const { rating, name, email, message, disabled, enattente } = {
+      ...this.state
+    }
+    axios
+      .post("/postavis", {
+        rating,
+        name,
+        email,
+        message,
+        disabled,
+        enattente
+      })
+      .then(
+        response => (
+          NotificationManager.success("Votre avis est soumis", "", 3000),
+          this.setState({
+            rating: "",
+            name: "",
+            email: "",
+            message: "",
+            disabled: "",
+            enattente: ""
+          })
+        )
+      )
+      .catch(err =>
+        NotificationManager.error(
+          "Une erreur lors d'ajout, essayer une autre fois",
+          ""
+        )
+      )
+  }
 
   render() {
     return (
@@ -129,16 +125,14 @@ class Avis extends Component {
             onClick={this.insert_avis}
           />
         </form>
-<div className="row">
-        {[...this.state.allavis].map((item, index) => (
-          <div className="col-lg-6">
- <AvisValide key={index} item={item} />
- </div>
-        ))}
-      
+        <div className="row">
+          {[...this.state.allavis].map((item, index) => (
+            <div className="col-lg-6">
+              <AvisValide key={index} item={item} />
+            </div>
+          ))}
         </div>
         <NotificationContainer />
-
       </React.Fragment>
     )
   }
