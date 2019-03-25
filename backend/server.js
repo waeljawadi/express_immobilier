@@ -173,6 +173,67 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
       }
     )
   })
+
+
+  app.get("/getavisenattente", (req, res) => {
+    db.collection("avis")
+      .find({ enattente: 1 })
+      .toArray((err, data) => {
+        if (err) res.send("can not get avis")
+        else res.send(data)
+      })
+  })
+
+
+  app.put("/isactiveavis/:id/:enattente", (req, res) => {
+    let id = ObjectID(req.params.id)
+    let enattente = req.params.enattente
+    let x
+    enattente == 1? (value = 0) : (value = 1)
+    db.collection("avis").findOneAndUpdate(
+      { _id: id },
+      { $set: { enattente: value } },
+      (err, data) => {
+        err ? res.send("can not active avis") : res.send(data)
+      }
+    )
+  })
+
+  app.get("/getavisvalid", (req, res) => {
+    db.collection("avis")
+      .find({ enattente: 0 })
+      .toArray((err, data) => {
+        if (err) res.send("can not get avis")
+        else res.send(data)
+      })
+  })
+
+  app.put("/enattenteavis/:id/:enattente", (req, res) => {
+    let id = ObjectID(req.params.id)
+    let enattente = req.params.enattente
+    let x
+    enattente == 0? (value = 1) : (value = 0)
+    db.collection("avis").findOneAndUpdate(
+      { _id: id },
+      { $set: { enattente: value } },
+      (err, data) => {
+        err ? res.send("can not put on hold") : res.send(data)
+      }
+    )
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
 const port = process.env.PORT || 3070
 app.listen(port, err => {

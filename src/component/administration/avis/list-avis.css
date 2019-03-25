@@ -1,0 +1,40 @@
+
+
+
+h4#titleavis {
+    margin-left: -21px;
+    color: yellow;
+}
+h4#titleavis {
+    font-size: 26px;
+    color: yellow;
+   
+}
+p#textavis {
+    margin-top: 36px;
+}
+
+p.infoavis {
+    margin-top: 23px;
+}
+p.infoavis {
+    color: black;
+    margin-top: 23px;
+}
+#textavis{
+    color: black;
+}
+
+button#bntactiv {
+    margin-top: 13px;
+    margin-left: -3px;
+    font-size: 12px;
+    font-size: 10px;
+    width: 92px;
+    
+}
+
+button#bntactiv {
+    border: none;
+    background-color: #83bb4d;
+}

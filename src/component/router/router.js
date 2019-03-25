@@ -26,6 +26,9 @@ import ListeActu from "../administration/actualité/list-actu/listactu"
 import EditActualite from "../administration/actualité/ajout/edit-actu"
 import DetailActualite from "../actualité/detailactualite";
 
+import Listaviss from '../administration/avis/list-avis'
+import AvisValid from '../administration/avis/avis-valid'
+
 
 
 class Router extends Component {
@@ -73,6 +76,9 @@ class Router extends Component {
 
         <Route exact path="/admin/user/listuser" component={Listuser} />
         <Route exact path="/admin/user/attenteuser" component={Attenteuser} />
+
+        <Route exact path="/admin/avis/listavis" component={Listaviss} />
+        <Route exact path="/admin/avis/avisvalide" component={AvisValid} />
 
 
         <Route exact path="/contact" component={SingleImmo} />

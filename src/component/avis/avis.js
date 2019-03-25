@@ -68,7 +68,7 @@ class Avis extends Component {
                               email:'',
                               message:'',
                               disabled:'',
-                              enattente:''})
+                              enattente:1})
                             ) )
                             .catch(err =>
                               NotificationManager.error(

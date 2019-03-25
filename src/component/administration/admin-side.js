@@ -120,9 +120,9 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-pause" aria-hidden="true"></i> En attente</a></li>
-                            <li><a href="pages/charts/morris.html"><i className="fa fa-check-square-o" aria-hidden="true"></i> Valider</a></li>
-                            <li><a href="pages/charts/flot.html"><i className="fa fa-ban" aria-hidden="true"></i> Bloquer</a></li>
+                            <li><Link to="/admin/avis/listavis"><i className="fa fa-pause" aria-hidden="true"></i> En attente</Link></li>
+                            <li><Link to="/admin/avis/avisvalide"><i className="fa fa-check-square-o" aria-hidden="true"></i> Valider</Link></li>
+                            
                            
                         </ul>
                         </li>
