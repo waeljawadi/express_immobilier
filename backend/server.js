@@ -192,7 +192,6 @@ const addCar = new Car({
   brand:'ok'
 })
 
-app.
 addCar.save((err,doc) => {
   err ? console.log(err) : console.log(doc)
 })
