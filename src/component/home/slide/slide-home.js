@@ -20,11 +20,11 @@ class Slide extends Component {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={image5} className="d-block w-100" alt="First slide" />
+      <img src={image2} className="d-block w-100" alt="First slide" />
       
     </div>
     <div className="carousel-item">
-      <img src={image2} className="d-block w-100" alt="Second slide"/>
+      <img src={image5} className="d-block w-100" alt="Second slide"/>
     </div>
     <div className="carousel-item">
       <img src={image3} className="d-block w-100" alt="Third slide"/>

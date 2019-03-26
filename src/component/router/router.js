@@ -29,6 +29,10 @@ import DetailActualite from "../actualité/detailactualite";
 import Listaviss from '../administration/avis/list-avis'
 import AvisValid from '../administration/avis/avis-valid'
 
+import Contact from '../contact/contact'
+import ContactList from '../administration/contact/listcontact'
+
+
 
 
 class Router extends Component {
@@ -80,11 +84,16 @@ class Router extends Component {
         <Route exact path="/admin/avis/listavis" component={Listaviss} />
         <Route exact path="/admin/avis/avisvalide" component={AvisValid} />
 
+        <Route exact path="/admin/contact/listcontact" component={ContactList} />
 
-        <Route exact path="/contact" component={SingleImmo} />
+
+        <Route exact path="/contact" component={Contact} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+
+
+
 
         {footer}
       </React.Fragment>

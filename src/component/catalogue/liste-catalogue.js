@@ -10,7 +10,8 @@ import axios from 'axios'
 class ListeCatalogue extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+        }
     }
 
 
@@ -22,6 +23,9 @@ class ListeCatalogue extends Component {
         axios.get('/getimmofront').then((res)=>this.props.updateImmoReducer(res.data))
        
     }
+
+    
+  
     
     render() { 
         const {listimmo}= this.props
@@ -29,6 +33,9 @@ class ListeCatalogue extends Component {
             <div>
             <center>
                 <SearchPage/>
+               
+                
+                
             </center>
             </div>
              <div className="row ctlg container-fluid">
@@ -55,9 +62,13 @@ const mapDispatchToProps=(dispatch)=>
                 type:'UPDATE_IMMO',
                 listimmo            })
         }
-    }
-}
 
+
+       
+        
+    }
+    
+}
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(ListeCatalogue);

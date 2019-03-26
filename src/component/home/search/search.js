@@ -22,9 +22,9 @@ class Search extends Component {
           <div className="col-lg-3 col-md-12 col-sm-12">
             <p className="txtline2">Type:</p>
             <select className="form-control">
-              <option>Maison</option>
-              <option>Terrain</option>
-              <option>Maison & Terrain</option>
+              <option>Villa</option>
+              <option>Appartement</option>
+              <option>Villa & Appartement</option>
             </select>
           </div>
           <div className="col-lg-3 col-md-12 col-sm-12">
@@ -37,18 +37,13 @@ class Search extends Component {
             </select>
           </div>
           <div className="col-lg-3 col-md-12 col-sm-12">
-            <form>
-              <div class="form-group">
-                <label className="prix" for="formControlRange">
-                  Prix:
-                </label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                />
-              </div>
-            </form>
+          <p className="txtline2">Prix en TND:</p>
+            <select className="form-control">
+              <option>Choisir le prix</option>
+              <option>100 000 au max</option>
+              <option>150 000 au max</option>
+              <option>200 000 au max</option>
+            </select>
           </div>
           <div className="col-lg-3 col-md-12 col-sm-12">
             <button type="button" className="btn btn-success btn-lg btnsearch">

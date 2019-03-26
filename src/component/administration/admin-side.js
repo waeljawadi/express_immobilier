@@ -136,15 +136,15 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-address-card-o" aria-hidden="true"></i> Coordonnées</a></li>
+                            {/* <li><a href="pages/charts/chartjs.html"><i className="fa fa-address-card-o" aria-hidden="true"></i> Coordonnées</a></li> */}
                            
                             <li>
                         <a href="pages/mailbox/mailbox.html">
-                        <i className="fa fa-envelope" aria-hidden="true"></i> <span>Mailbox</span>
+                        <Link to="/admin/contact/listcontact">   <i className="fa fa-envelope" aria-hidden="true"></i> <span>Mailbox</span></Link>
                             <span className="pull-right-container">
-                            <small className="label pull-right bg-yellow">12</small>
+                            {/* <small className="label pull-right bg-yellow">12</small>
                             <small className="label pull-right bg-green">16</small>
-                            <small className="label pull-right bg-red">5</small>
+                            <small className="label pull-right bg-red">5</small> */}
                             </span>
                         </a>
                         </li>

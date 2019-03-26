@@ -87,7 +87,20 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
       }
     )
   })
-  //Actualite
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+    //Actualite
   //add actualite
   app.post("/postactu", (req, res) => {
     let newactu = req.body
@@ -222,7 +235,35 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
     )
   })
 
+  //contact send
 
+  app.post("/postcontact", (req, res) => {
+    let newcontact = req.body
+    db.collection("contact").insertOne(newcontact, (err, data) => {
+      err ? res.send("cant not send contact") : res.send(data)
+    })
+  })
+
+  //get contact
+
+  app.get("/getcontact", (req, res) => {
+    db.collection("contact")
+      .find()
+      .toArray((err, data) => {
+        if (err) res.send("can not get list")
+        else res.send(data)
+      })
+  })
+
+// remove contact
+
+app.delete("/deletecontact/:id", (req, res) => {
+  let id = ObjectID(req.params.id)
+  db.collection("contact").findOneAndDelete({ _id: id }, (err, data) => {
+    if (err) res.send("can not delete contact")
+    else res.send(data)
+  })
+})
 
 
 

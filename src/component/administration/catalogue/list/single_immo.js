@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom'
 
 
 class SingleImmo extends Component {
+
+  
   deleteimmobilier = () => {
     const { item } = this.props
     axios
@@ -13,6 +15,8 @@ class SingleImmo extends Component {
       .then(() => this.props.deleteImmoReducer(item._id))
       .catch(err => alert(err))
   }
+
+
   statue = () => {
     if (this.props.item.desactiver == 1) return "indisponible"
     else return "disponible"
