@@ -66,3 +66,8 @@ i.fa.fa-search {
 button.btn.btn-success.btn-lg.btnsearch {
   background-color: #83bb4d;
 }
+i.fa.fa-search {
+  color: #1d1b1c !important;
+  font-size: 18px;
+  margin-right: 12px;
+}

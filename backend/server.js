@@ -56,6 +56,27 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
         else res.send(data)
       })
   })
+
+
+
+
+// app.get("/getimmofrontsearch", (req, res) => {
+//   let keyword = req.query.keyword
+//   console.log(keyword)
+//   db.collection("immo")
+//     .find({title : new RegExp(keyword)  }, { sort: 'title'})
+//     .toArray((err, data) => {
+//       if (err) res.send("can not get list")
+//       else res.send(data)
+//     })
+// })
+
+
+
+
+ 
+
+
   app.get("/getimmoavant", (req, res) => {
     db.collection("immo")
       .find({ enavant: 1 })
@@ -91,7 +112,13 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
       }
     )
   })
-  //Actualite
+
+ 
+
+ 
+
+
+    //Actualite
   //add actualite
   app.post("/postactu", (req, res) => {
     let newactu = req.body
@@ -177,6 +204,160 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
       }
     )
   })
+
+
+  app.get("/getavisenattente", (req, res) => {
+    db.collection("avis")
+      .find({ enattente: 1 })
+      .toArray((err, data) => {
+        if (err) res.send("can not get avis")
+        else res.send(data)
+      })
+  })
+
+
+  app.put("/isactiveavis/:id/:enattente", (req, res) => {
+    let id = ObjectID(req.params.id)
+    let enattente = req.params.enattente
+    let x
+    enattente == 1? (value = 0) : (value = 1)
+    db.collection("avis").findOneAndUpdate(
+      { _id: id },
+      { $set: { enattente: value } },
+      (err, data) => {
+        err ? res.send("can not active avis") : res.send(data)
+      }
+    )
+  })
+
+  app.get("/getavisvalid", (req, res) => {
+    db.collection("avis")
+      .find({ enattente: 0 })
+      .toArray((err, data) => {
+        if (err) res.send("can not get avis")
+        else res.send(data)
+      })
+  })
+
+  app.put("/enattenteavis/:id/:enattente", (req, res) => {
+    let id = ObjectID(req.params.id)
+    let enattente = req.params.enattente
+    let x
+    enattente == 0? (value = 1) : (value = 0)
+    db.collection("avis").findOneAndUpdate(
+      { _id: id },
+      { $set: { enattente: value } },
+      (err, data) => {
+        err ? res.send("can not put on hold") : res.send(data)
+      }
+    )
+  })
+
+  //contact send
+
+  app.post("/postcontact", (req, res) => {
+    let newcontact = req.body
+    db.collection("contact").insertOne(newcontact, (err, data) => {
+      err ? res.send("cant not send contact") : res.send(data)
+    })
+  })
+
+  //get contact
+
+  app.get("/getcontact", (req, res) => {
+    db.collection("contact")
+      .find()
+      .toArray((err, data) => {
+        if (err) res.send("can not get list")
+        else res.send(data)
+      })
+  })
+
+// remove contact
+
+app.delete("/deletecontact/:id", (req, res) => {
+  let id = ObjectID(req.params.id)
+  db.collection("contact").findOneAndDelete({ _id: id }, (err, data) => {
+    if (err) res.send("can not delete contact")
+    else res.send(data)
+  })
+})
+
+// add users
+
+app.post("/postusers", (req, res) => {
+  let newuser = req.body
+  db.collection("users").insertOne(newuser, (err, data) => {
+    err ? res.send("cant not register") : res.send(data)
+  })
+})
+
+// get users
+app.get("/getusers", (req, res) => {
+  db.collection("users")
+    .find()
+    .toArray((err, data) => {
+      if (err) res.send("can not get user list")
+      else res.send(data)
+    })
+})
+
+
+//delete users
+app.delete("/deleteuser/:id", (req, res) => {
+  let id = ObjectID(req.params.id)
+  db.collection("users").findOneAndDelete({ _id: id }, (err, data) => {
+    if (err) res.send("can not delete user")
+    else res.send(data)
+  })
+})
+
+
+//search immobilier
+
+
+
+
+app.get("/searchimmo/:type", (req, res) => {
+  let type = req.params.type
+
+  db.collection("immo")
+    .find({type_immobilier: type }
+     )
+    .toArray((err, data) => {
+      if (err) res.send("can not get user list")
+      else res.send(data)
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
 
 

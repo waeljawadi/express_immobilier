@@ -79,8 +79,8 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><Link to="/admin/user/listuser"><i className="fa fa-list-ol" aria-hidden="true"></i> Liste des users</Link></li>
-                            <li><Link to="/admin/user/attenteuser"><i className="fa fa-pause" aria-hidden="true"></i> users en attent</Link></li>
+                            <li><Link to="/admin/user/listusers"><i className="fa fa-list-ol" aria-hidden="true"></i> Liste des users</Link></li>
+                            {/* <li><Link to="/admin/user/attenteuser"><i className="fa fa-pause" aria-hidden="true"></i> users en attent</Link></li> */}
 
                         </ul>
                         </li>
@@ -134,9 +134,9 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-pause" aria-hidden="true"></i> En attente</a></li>
-                            <li><a href="pages/charts/morris.html"><i className="fa fa-check-square-o" aria-hidden="true"></i> Valider</a></li>
-                            <li><a href="pages/charts/flot.html"><i className="fa fa-ban" aria-hidden="true"></i> Bloquer</a></li>
+                            <li><Link to="/admin/avis/listavis"><i className="fa fa-pause" aria-hidden="true"></i> En attente</Link></li>
+                            <li><Link to="/admin/avis/avisvalide"><i className="fa fa-check-square-o" aria-hidden="true"></i> Valider</Link></li>
+                            
                            
                         </ul>
                         </li>
@@ -150,15 +150,15 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><a href="pages/charts/chartjs.html"><i className="fa fa-address-card-o" aria-hidden="true"></i> Coordonnées</a></li>
+                            {/* <li><a href="pages/charts/chartjs.html"><i className="fa fa-address-card-o" aria-hidden="true"></i> Coordonnées</a></li> */}
                            
                             <li>
                         <a href="pages/mailbox/mailbox.html">
-                        <i className="fa fa-envelope" aria-hidden="true"></i> <span>Mailbox</span>
+                        <Link to="/admin/contact/listcontact">   <i className="fa fa-envelope" aria-hidden="true"></i> <span>Mailbox</span></Link>
                             <span className="pull-right-container">
-                            <small className="label pull-right bg-yellow">12</small>
+                            {/* <small className="label pull-right bg-yellow">12</small>
                             <small className="label pull-right bg-green">16</small>
-                            <small className="label pull-right bg-red">5</small>
+                            <small className="label pull-right bg-red">5</small> */}
                             </span>
                         </a>
                         </li>

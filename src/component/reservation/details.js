@@ -3,7 +3,7 @@ import './details.css';
 import axios from 'axios'
 import { withRouter } from 'react-router-dom';
 import Contactreservation from './contactreservation'
-///import queryString from 'query-string';
+import {Link} from 'react-router-dom'
 
 const BASE_URL = "http://localhost:3000/"
 
@@ -16,15 +16,15 @@ class Details extends Component {
 }
 
     componentDidMount() {
-        const map = new window.google.maps.Map(document.getElementById('map'), {
-          center: { lat: 35.8575044, lng: 10.6085306 },
-          zoom: 16
-        });
-      
+        
     
         axios.get(`/getreservation/${this.props.match.params.id}`).then((res)=>this.setState({'all':res.data}))
       }
 
+      handleClick() {
+        let single_item =  Object.values(this.state.all)
+        window.location.assign(`https://www.google.fr/maps/place/${single_item.map((item,index) => item.ville)}`);
+      }
 
       
     render() 
@@ -34,6 +34,8 @@ class Details extends Component {
     
    
         return ( <React.Fragment>
+
+
             <div className="row">
             <div className="col-lg-8 col-md-12 col-sm-12 part1">
             <div className="ligne1res">
@@ -53,7 +55,7 @@ class Details extends Component {
             </div>
             <div className="ligne3">
             <p className='parag1res'> {single_item.map((item,index) => item.dcomplet)}</p>
-        
+            
         
             </div>
             <div className="ligne4">
@@ -98,13 +100,21 @@ class Details extends Component {
             <div className="ligne5">
             <p className="mapres"> Google Map:</p>
             <hr></hr>    
-            <div className="map" id="map">
+            <div>
+           
+                    <img onClick={this.handleClick.bind(this)} src="https://www.maptiler.com/img/map-home.svg" className="mapimg"/>
+
             </div>
             </div>
 
             <div className="ligne6">
 
-           <Contactreservation/>
+           <Contactreservation 
+           immo_id={this.props.match.params.id}
+           immo = {[...this.state.all]}
+           />
+
+ 
 
 
 
@@ -127,7 +137,7 @@ class Details extends Component {
 
 
         </div>
-)}
+
         </React.Fragment> );
     }
 }

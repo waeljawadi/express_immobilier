@@ -26,6 +26,16 @@ import ListeActu from "../administration/actualité/list-actu/listactu"
 import EditActualite from "../administration/actualité/ajout/edit-actu"
 import DetailActualite from "../actualité/detailactualite";
 
+import Listaviss from '../administration/avis/list-avis'
+import AvisValid from '../administration/avis/avis-valid'
+
+import Contact from '../contact/contact'
+import ContactList from '../administration/contact/listcontact'
+import UsersList from '../administration/user/list/listuser'
+
+import FilterCatalogue from '../catalogue/cataloguefilter'
+
+
 
 
 class Router extends Component {
@@ -57,7 +67,12 @@ class Router extends Component {
         <Route exact path="/avis" component={Avis} />
         {/* <Route exact path="/reservation" component={Reservation} /> */}
         <Route path="/listecatalogue/reservation/:id" component={Reservation}/> 
+        <Route path="/contact/:nom/:email/:phone/:message" component={Contact}/> 
         <Route exact path="/listeactualite/detailactualite/:id" component={DetailActualite} />
+
+
+        <Route exact path="/filtercatalogue/:type" component={FilterCatalogue} />
+
 
 
         <Route  path="/admin" component={Admin} />
@@ -74,11 +89,20 @@ class Router extends Component {
         <Route exact path="/admin/user/listuser" component={Listuser} />
         <Route exact path="/admin/user/attenteuser" component={Attenteuser} />
 
+        <Route exact path="/admin/avis/listavis" component={Listaviss} />
+        <Route exact path="/admin/avis/avisvalide" component={AvisValid} />
 
-        <Route exact path="/contact" component={SingleImmo} />
+        <Route exact path="/admin/contact/listcontact" component={ContactList} />
+        <Route exact path="/admin/user/listusers" component={UsersList} />
+
+
+        <Route exact path="/contact" component={Contact} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+
+
+
 
         {footer}
       </React.Fragment>

@@ -1,20 +1,21 @@
 import React from "react"
 import { Component } from "react"
+import Onecontact from './onecontact'
+import ModalPage from './modal'
 import {connect} from 'react-redux'
 import axios from 'axios'
-import Oneuser from './oneuser'
 
-import _css_ from '../../../administration/style/style.module.css'
-import '../../../administration/catalogue/list/listimmo.css'
+import _css_ from '../../administration/style/style.module.css'
+import '../../administration/catalogue/list/listimmo.css'
 
 
-class UsersList extends Component {
+class ContactList extends Component {
   componentDidMount=()=>{
-    axios.get('/getusers').then((res)=>this.props.updateUsersReducer(res.data))
+    axios.get('/getcontact').then((res)=>this.props.updateContactReducer(res.data))
   }
 
   componentDidUpdate=()=>{
-    axios.get('/getusers').then((res)=>this.props.updateUsersReducer(res.data))
+    axios.get('/getcontact').then((res)=>this.props.updateContactReducer(res.data))
 }
 
 
@@ -23,7 +24,7 @@ class UsersList extends Component {
 
 
   render() {
-    const {listusers}= this.props
+    const {listcontact}= this.props
 
     return (
       <React.Fragment>
@@ -37,10 +38,10 @@ class UsersList extends Component {
                   <table className="table user-list">
                     <thead>
                       <tr>
-                        <th><span>User</span></th>
-                        <th><span>lastname</span></th>
-                        <th className="text-center"><span>Email</span></th>
-                      
+                        <th><span>Contact</span></th>
+                        <th><span>Email</span></th>
+                        <th className="text-center"><span>Mobile</span></th>
+                        <th className="text-center"><span>Message</span></th>
                        
                       </tr>
                     </thead>
@@ -48,7 +49,7 @@ class UsersList extends Component {
                       
                        
 
-                    { listusers.map((el,index)=><Oneuser item={el} key={index}  /> 
+                    { listcontact.map((el,index)=><Onecontact item={el} key={index}  /> 
                                            
         )}
 
@@ -78,21 +79,21 @@ class UsersList extends Component {
 const mapStateToProps=(state)=>
 {
     return {
-        listusers:state.userReducer
+        listcontact:state.contactReducer
     }
 }
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        updateUsersReducer:listusers=>
+        updateContactReducer:listcontact=>
         {
             dispatch({
-                type:'UPDATE_USERS',
-                listusers         })
+                type:'UPDATE_CONTACT',
+                listcontact           })
         }
     }
 }
 
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(UsersList);
+export default connect(mapStateToProps,mapDispatchToProps)(ContactList);
