@@ -1,48 +1,24 @@
-// import React from "react"
-// import { Component } from "react"
-// import "../login/login.css"
-// class Login extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <div className="login">
-//           <div className="login-triangle" />
-//           <h2 className="login-header">Log in</h2>
-//           <form className="login-container">
-//             <div className="center-on-page">
-//             </div>
-//             <p>
-//               <input type="email" placeholder="Email" />
-//             </p>
-//             <p>
-//               <input type="password" placeholder="Password" />
-//             </p>
-//             <p>
-//               <input type="submit" value="Log in" />
-//             </p>
-//           </form>
-//         </div>
-
-
-        
-//       </React.Fragment>
-//     )
-//   }
-// }
-// export default Login
-
-
-
 import React, { Component } from 'react';
+//import Cookies from 'js-cookie';
+
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
       email : '',
-      password: ''
-    };
+      password: '',
+      userid: cookies.get('userid')    };
   }
+
+
+  
+
+
+
 
   handleInputChange = (event) => {
     const { value, name } = event.target;
@@ -75,6 +51,8 @@ class Login extends Component {
   }
 
   render() {
+console.log(document.cookie.substr(14, 24))
+    
     return (
       <div className="login">
            <div className="login-triangle" />

@@ -219,9 +219,10 @@ mongoose.connect(mongo_uri, { useNewUrlParser: true }, function(err) {
             // Issue token
             const payload = { email }
             const token = jwt.sign(payload, secret, {
-              expiresIn: "1h"
+              expiresIn: "10s"
             })
-            res.cookie("token", token, { httpOnly: true }).sendStatus(200)
+            
+            res.cookie("userid", user._id, { httpOnly: false }).sendStatus(200)
           }
         })
       }
