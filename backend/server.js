@@ -52,6 +52,27 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
         else res.send(data)
       })
   })
+
+
+
+
+// app.get("/getimmofrontsearch", (req, res) => {
+//   let keyword = req.query.keyword
+//   console.log(keyword)
+//   db.collection("immo")
+//     .find({title : new RegExp(keyword)  }, { sort: 'title'})
+//     .toArray((err, data) => {
+//       if (err) res.send("can not get list")
+//       else res.send(data)
+//     })
+// })
+
+
+
+
+ 
+
+
   app.get("/getimmoavant", (req, res) => {
     db.collection("immo")
       .find({ enavant: 1 })
@@ -90,14 +111,7 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
 
  
 
-
-
-
-
-
-
-
-
+ 
 
 
     //Actualite
@@ -264,6 +278,45 @@ app.delete("/deletecontact/:id", (req, res) => {
     else res.send(data)
   })
 })
+
+// add users
+
+app.post("/postusers", (req, res) => {
+  let newuser = req.body
+  db.collection("users").insertOne(newuser, (err, data) => {
+    err ? res.send("cant not register") : res.send(data)
+  })
+})
+
+// get users
+app.get("/getusers", (req, res) => {
+  db.collection("users")
+    .find()
+    .toArray((err, data) => {
+      if (err) res.send("can not get user list")
+      else res.send(data)
+    })
+})
+
+
+//delete users
+app.delete("/deleteuser/:id", (req, res) => {
+  let id = ObjectID(req.params.id)
+  db.collection("users").findOneAndDelete({ _id: id }, (err, data) => {
+    if (err) res.send("can not delete user")
+    else res.send(data)
+  })
+})
+
+
+
+
+
+
+
+
+
+
 
 
 

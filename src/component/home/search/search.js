@@ -31,9 +31,9 @@ class Search extends Component {
             <p className="txtline2">Surface en mètre carré:</p>
             <select className="form-control">
               <option>Choisir la surface</option>
-              <option>100</option>
-              <option>150</option>
-              <option>200</option>
+              <option>100 au max</option>
+              <option>150 au max</option>
+              <option>200 au max</option>
             </select>
           </div>
           <div className="col-lg-3 col-md-12 col-sm-12">

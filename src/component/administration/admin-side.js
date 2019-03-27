@@ -65,8 +65,8 @@ export default class SideBar extends Component {
                             </span>
                         </a>
                         <ul className="treeview-menu">
-                            <li><Link to="/admin/user/listuser"><i className="fa fa-list-ol" aria-hidden="true"></i> Liste des users</Link></li>
-                            <li><Link to="/admin/user/attenteuser"><i className="fa fa-pause" aria-hidden="true"></i> users en attent</Link></li>
+                            <li><Link to="/admin/user/listusers"><i className="fa fa-list-ol" aria-hidden="true"></i> Liste des users</Link></li>
+                            {/* <li><Link to="/admin/user/attenteuser"><i className="fa fa-pause" aria-hidden="true"></i> users en attent</Link></li> */}
 
                         </ul>
                         </li>

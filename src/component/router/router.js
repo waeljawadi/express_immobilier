@@ -31,6 +31,7 @@ import AvisValid from '../administration/avis/avis-valid'
 
 import Contact from '../contact/contact'
 import ContactList from '../administration/contact/listcontact'
+import UsersList from '../administration/user/list/listuser'
 
 
 
@@ -85,6 +86,7 @@ class Router extends Component {
         <Route exact path="/admin/avis/avisvalide" component={AvisValid} />
 
         <Route exact path="/admin/contact/listcontact" component={ContactList} />
+        <Route exact path="/admin/user/listusers" component={UsersList} />
 
 
         <Route exact path="/contact" component={Contact} />

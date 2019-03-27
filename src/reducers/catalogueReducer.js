@@ -1,15 +1,15 @@
-
-
-const immoReducer=(state=[],action)=>
+let tab=[]
+const immoReducer=(state=tab,action)=>
 {
   switch(action.type)
   {
       case 'UPDATE_IMMO':
       return(
-          state=action.listimmo
+          state=action.listimmo,
+          tab=action.listimmo
       )
 
-     
+      
 
 
       case 'REMOVE_IMMO':
@@ -25,7 +25,7 @@ const immoReducer=(state=[],action)=>
 
       case 'SEARCH_IMMO' : 
         return (
-            state.filter(el => el.title.toLocaleLowerCase().indexOf(action.keyword)> -1)
+            tab.filter(el => el.title.toLowerCase().indexOf(action.keyword)> -1)
         )
      
 
