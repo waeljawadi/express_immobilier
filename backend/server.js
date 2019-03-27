@@ -2,9 +2,13 @@ const express = require("express")
 const { ObjectID, MongoClient } = require("mongodb")
 const multer = require("multer")
 const cors = require("cors")
-const app = express()
 const bodyParser = require("body-parser")
-app.use(bodyParser.json())
+const cookieParser = require("cookie-parser")
+const jwt = require("jsonwebtoken")
+const mongoose = require("mongoose")
+const User = require("./models/User")
+
+const app = express()
 const MongoUrl = "mongodb://localhost:27017"
 const database = "expressimmo"
 var storage = multer.diskStorage({
@@ -174,6 +178,57 @@ MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, client) => {
     )
   })
 })
+
+
+
+const secret = "mysecretsshhh"
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(cookieParser())
+
+
+const mongo_uri = "mongodb://localhost/expressimmo"
+mongoose.connect(mongo_uri, { useNewUrlParser: true }, function(err) {
+  (err) ? console.log("probleme while conecting") : console.log(`Successfully connected to ${mongo_uri}`)
+  })
+
+
+  app.post("/api/authenticate", function(req, res) {
+    const { email, password } = req.body
+    User.findOne({ email }, function(err, user) {
+      if (err) {
+        console.error(err)
+        res.status(500).json({
+          error: "Internal error please try again"
+        })
+      } else if (!user) {
+        res.status(401).json({
+          error: "Incorrect email or password"
+        })
+      } else {
+        user.isCorrectPassword(password, function(err, same) {
+          if (err) {
+            res.status(500).json({
+              error: "Internal error please try again"
+            })
+          } else if (!same) {
+            res.status(401).json({
+              error: "Incorrect email or password"
+            })
+          } else {
+            // Issue token
+            const payload = { email }
+            const token = jwt.sign(payload, secret, {
+              expiresIn: "10s"
+            })
+            
+            res.cookie("userid", user._id, { httpOnly: false }).sendStatus(200)
+          }
+        })
+      }
+    })
+  })
+
 const port = process.env.PORT || 3070
 app.listen(port, err => {
   err ? console.log("Server is down") : console.log("Server up and runing")

@@ -4,11 +4,25 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import _css_ from './style/style.module.css'
 
+import axios from 'axios'
+
+
 
 export default class SideBar extends Component {
+
+    componentDidMount()
+    {
+      (document.cookie.substr(14, 24).length != 24) 
+      && (window.location = '/login')
+    }
     render(){
         return (
+
+
+
+
             <aside className={`main-sidebar  ${_css_.fixit}`}>
+           
                 <section className={`sidebar`}>
                     <div className="user-panel">
                         <div className="pull-left image">
