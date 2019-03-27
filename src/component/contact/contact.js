@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import "./contact.css";
 import { NotificationContainer, NotificationManager } from "react-notifications"
 import axios from 'axios'
-
+import { withRouter } from "react-router-dom"
+import {connect} from 'react-redux'
 
 
 class Contact extends Component {
@@ -12,10 +13,10 @@ class Contact extends Component {
     
           this.state = { 
           
-            contactname:'',
-            contactemail:'',
-            contactmobile:'',
-            contacttext:'',
+            contactname:this.props.match.params.nom,
+            contactemail:this.props.match.params.email,
+            contactmobile:this.props.match.params.phone,
+            contacttext:this.props.match.params.message,
             disabled: true,
            
                        }
@@ -23,8 +24,10 @@ class Contact extends Component {
         }
       }
 
-
-
+      
+      
+      
+      
 
 
 
@@ -95,6 +98,10 @@ class Contact extends Component {
     render() { 
         return ( 
            <div className="row maincontact">
+
+
+
+
            <div className="col-sm-12 col-md-12 col-lg-6 mapcont">
            
             <div className="col-sm-12 col-md-12 col-lg-12 mapcont2" id="map"></div>
@@ -173,4 +180,4 @@ class Contact extends Component {
     }
 }
  
-export default Contact;
+export default withRouter(Contact)

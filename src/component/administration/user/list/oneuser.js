@@ -32,7 +32,7 @@ class Oneuser extends Component {
           </td>
           <td>{item.lastname}</td>
           <td className="text-center">
-            <span className="label label-default">{item.useremail} </span>
+            <span className="label label-default">{item.email} </span>
           </td>
           
           <td style={{ width: "20%" }}>
@@ -40,7 +40,7 @@ class Oneuser extends Component {
               <span className="fa-stack">
               <ModalPage name={this.props.item.username}
                          lastname={this.props.item.lastname}
-                         email={this.props.item.useremail}/>
+                         email={this.props.item.email}/>
               
               </span>
             </a>

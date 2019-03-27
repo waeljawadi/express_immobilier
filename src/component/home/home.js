@@ -18,7 +18,9 @@ class Home extends Component {
         <Slide />
         <Search />
         <Caroussel />
+        
         <Paralax />
+      
         <AvisClient/>
       </div>
     )

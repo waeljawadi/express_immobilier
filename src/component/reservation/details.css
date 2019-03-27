@@ -119,6 +119,20 @@ div#map {
     width: 84%;
     margin-left: 71px;
     margin-top: 53px;
-    border: 1px solid;
+    box-shadow:0 20px 50px 0 rgba(0,0,0,.13);
+
     padding: 8px;
 }
+
+img.mapimg {
+    width: 100%;
+cursor:pointer
+}
+
+/* .col-lg-8.col-md-12.col-sm-12.part1 {
+    box-shadow:0 20px 50px 0 rgba(0,0,0,.13);
+}
+
+.col-lg-8.col-md-12.col-sm-12.part2 {
+    box-shadow:0 20px 50px 0 rgba(0,0,0,.13);
+} */

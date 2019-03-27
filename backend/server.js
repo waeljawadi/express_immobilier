@@ -309,6 +309,32 @@ app.delete("/deleteuser/:id", (req, res) => {
 })
 
 
+//search immobilier
+
+
+
+
+app.get("/searchimmo/:type", (req, res) => {
+  let type = req.params.type
+
+  db.collection("immo")
+    .find({type_immobilier: type }
+     )
+    .toArray((err, data) => {
+      if (err) res.send("can not get user list")
+      else res.send(data)
+    })
+})
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -33,6 +33,8 @@ import Contact from '../contact/contact'
 import ContactList from '../administration/contact/listcontact'
 import UsersList from '../administration/user/list/listuser'
 
+import FilterCatalogue from '../catalogue/cataloguefilter'
+
 
 
 
@@ -65,7 +67,12 @@ class Router extends Component {
         <Route exact path="/avis" component={Avis} />
         {/* <Route exact path="/reservation" component={Reservation} /> */}
         <Route path="/listecatalogue/reservation/:id" component={Reservation}/> 
+        <Route path="/contact/:nom/:email/:phone/:message" component={Contact}/> 
         <Route exact path="/listeactualite/detailactualite/:id" component={DetailActualite} />
+
+
+        <Route exact path="/filtercatalogue/:type" component={FilterCatalogue} />
+
 
 
         <Route  path="/admin" component={Admin} />

@@ -1,151 +1,111 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import './details.css'
-
+import {Link} from 'react-router-dom'
 class Contactreservation extends React.Component {
   state = {
-    fname: "Mark",
-    lname: "Otto",
-    email: "",
-    city: "",
-    state: "",
-    zip: ""
+    fullname:'',
+    email: '',
+    message: `Je reserve cet immo - ID: ${this.props.immo_id}`,
+    telephone:''   
   };
+
+  
+
+
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
+  
     return (
       <div>
         <form className="contactsform"> 
           <MDBRow>
-            <MDBCol md="4" className="mb-3">
+            <MDBCol md="6" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterNameEx"
                 className="grey-text"
               >
-                First name
+                Nom et prénom
               </label>
               <input
-                value={this.state.fname}
-                name="fname"
+                value={this.state.fullname}
+                name="fullname"
                 onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterNameEx"
                 className="form-control"
-                placeholder="First name"
+                placeholder="Full name"
                 required
               />
             </MDBCol>
-            <MDBCol md="4" className="mb-3">
+            <MDBCol md="6" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterEmailEx2"
                 className="grey-text"
               >
-                Last name
+                E-mail
               </label>
               <input
-                value={this.state.lname}
-                name="lname"
+                value={this.state.email}
+                name="email"
                 onChange={this.changeHandler}
-                type="text"
+                type="email"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
-                placeholder="Last name"
+                placeholder="Email"
                 required
               />
             </MDBCol>
-            <MDBCol md="4" className="mb-3">
+            </MDBRow>
+            <MDBRow>
+            <MDBCol md="6" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterConfirmEx3"
                 className="grey-text"
               >
-                Email
+                Téléphone
               </label>
               <input
-                value={this.state.email}
+                value={this.state.telephone}
                 onChange={this.changeHandler}
-                type="email"
+                type="text"
                 id="defaultFormRegisterConfirmEx3"
                 className="form-control"
-                name="email"
-                placeholder="Your Email address"
+                name="telephone"
+                placeholder="Your phone"
               />
             </MDBCol>
-          </MDBRow>
-          <MDBRow>
-            <MDBCol md="4" className="mb-3">
+          
+            <MDBCol md="6" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterPasswordEx4"
                 className="grey-text"
               >
-                City
+                Message
               </label>
               <input
-                value={this.state.city}
+              disabled
+                value={this.state.message}
                 onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
                 className="form-control"
-                name="city"
-                placeholder="City"
+                name="message"
+                placeholder="Taper votre message"
                 required
               />
             </MDBCol>
-            <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                State
-              </label>
-              <input
-                value={this.state.state}
-                onChange={this.changeHandler}
-                type="text"
-                id="defaultFormRegisterPasswordEx4"
-                className="form-control"
-                name="state"
-                placeholder="State"
-                required
-              />
-            </MDBCol>
-            <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                Zip
-              </label>
-              <input
-                value={this.state.zip}
-                onChange={this.changeHandler}
-                type="text"
-                id="defaultFormRegisterPasswordEx4"
-                className="form-control"
-                name="zip"
-                placeholder="Zip"
-                required
-              />
-            </MDBCol>
-          </MDBRow>
-          <MDBCol md="4" className="mb-3">
-            <div className="custom-control custom-checkbox pl-3">
-              <input
-                className="custom-control-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              
-            </div>
-          </MDBCol>
-          <MDBBtn color="primary" type="submit">
+            
+            </MDBRow>
+        
+          <Link to={`/contact/${this.state.fullname}/${this.state.email}/${this.state.telephone}/${this.state.message}`}>
+           <MDBBtn color="primary" type="submit">
             Reserver
-          </MDBBtn>
+          </MDBBtn></Link>
         </form>
       </div>
     );
