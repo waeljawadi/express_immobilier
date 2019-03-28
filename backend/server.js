@@ -285,12 +285,12 @@ app.delete("/deletecontact/:id", (req, res) => {
 
 // add users
 
-app.post("/postusers", (req, res) => {
-  let newuser = req.body
-  db.collection("users").insertOne(newuser, (err, data) => {
-    err ? res.send("cant not register") : res.send(data)
-  })
-})
+// app.post("/postusers", (req, res) => {
+//   let newuser = req.body
+//   db.collection("users").insertOne(newuser, (err, data) => {
+//     err ? res.send("cant not register") : res.send(data)
+//   })
+// })
 
 // get users
 app.get("/getusers", (req, res) => {
@@ -372,6 +372,30 @@ const mongo_uri = "mongodb://localhost/expressimmo"
 mongoose.connect(mongo_uri, { useNewUrlParser: true }, function(err) {
   (err) ? console.log("probleme while conecting") : console.log(`Successfully connected to ${mongo_uri}`)
   })
+
+
+
+
+
+
+
+// add users
+
+app.post("/postusers", (req, res) => {
+  let newuser = req.body
+
+  var Userss= new User(newuser); 
+
+
+  Userss.save(function(err, data){
+    err ? res.send("cant not register") : res.send(data)
+  })
+})
+
+
+
+
+
 
 
   app.post("/api/authenticate", function(req, res) {
