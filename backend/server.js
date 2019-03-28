@@ -11,6 +11,9 @@ const User = require("./models/User")
 const app = express()
 const MongoUrl = "mongodb://localhost:27017"
 const database = "expressimmo"
+
+
+// upload image
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images/uploads")

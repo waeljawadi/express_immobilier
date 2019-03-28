@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Avis from '../../../assets/pictures/slide/Capture.PNG'
 import './avis-client.css'
+import {Link} from 'react-router-dom'
 
 class AvisClient extends Component {
     constructor(props) {
@@ -22,8 +23,8 @@ class AvisClient extends Component {
                 <div className="col-lg-12 col-md-12 col-sm-12 logoavis"> 
                 
                   <img src={Avis} className="imgavis"/> 
-                  <button type="button" class="btn btn-success btnavis">Leave a review</button>
-
+                  <Link  to='/avis'> <button type="button" class="btn btn-success btnavis">Leave a review</button>
+                 </Link>
                 </div>
                 
                 </div>

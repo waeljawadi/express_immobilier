@@ -7,7 +7,8 @@ class Contactreservation extends React.Component {
     fullname:'',
     email: '',
     message: `Je reserve cet immo - ID: ${this.props.immo_id}`,
-    telephone:''   
+    telephone:'', 
+    disabled:true  
   };
 
   
@@ -15,8 +16,29 @@ class Contactreservation extends React.Component {
 
 
   changeHandler = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        this.setState({ [event.target.name]: event.target.value }, () => {
+          if (
+            re.test(this.state.email) &&
+            this.state.fullname.length > 6 &&
+            (this.state.telephone.length) >=8 
+            
+          )
+           {
+            this.setState({ disabled: false })
+          } else {
+            this.setState({ disabled: true })
+          }
+        })
+      }
+
+      handleNumbers = evt => {
+        this.setState({
+          [evt.target.name]: evt.target.validity.valid
+            ? evt.target.value
+            : this.state[evt.target.name]
+        })
+      }
 
   render() {
   
@@ -71,7 +93,7 @@ class Contactreservation extends React.Component {
               </label>
               <input
                 value={this.state.telephone}
-                onChange={this.changeHandler}
+                onChange={this.handleNumbers}
                 type="text"
                 id="defaultFormRegisterConfirmEx3"
                 className="form-control"
@@ -103,7 +125,9 @@ class Contactreservation extends React.Component {
             </MDBRow>
         
           <Link to={`/contact/${this.state.fullname}/${this.state.email}/${this.state.telephone}/${this.state.message}`}>
-           <MDBBtn color="primary" type="submit">
+           <MDBBtn color="primary"
+             disabled={this.state.disabled} 
+           type="submit">
             Reserver
           </MDBBtn></Link>
         </form>
