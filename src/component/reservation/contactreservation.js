@@ -1,13 +1,15 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import './details.css'
+import { NotificationContainer, NotificationManager } from "react-notifications"
+import axios from 'axios'
 import {Link} from 'react-router-dom'
 class Contactreservation extends React.Component {
   state = {
-    fullname:'',
-    email: '',
-    message: `Je reserve cet immo - ID: ${this.props.immo_id}`,
-    telephone:'', 
+    contactname:'',
+    contactemail: '',
+    contacttext: `Je reserve cet immo - ID: ${this.props.immo_id}`,
+    contactmobile:'', 
     disabled:true  
   };
 
@@ -19,9 +21,9 @@ class Contactreservation extends React.Component {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         this.setState({ [event.target.name]: event.target.value }, () => {
           if (
-            re.test(this.state.email) &&
-            this.state.fullname.length > 6 &&
-            (this.state.telephone.length) >=8 
+            re.test(this.state.contactemail) &&
+            this.state.contactname.length > 6 &&
+            (this.state.contactmobile.length) >=8 
             
           )
            {
@@ -40,6 +42,34 @@ class Contactreservation extends React.Component {
         })
       }
 
+
+
+      sendmessagecontact = () => {
+        axios
+          .post("/postcontact", { ...this.state })
+          .then(
+            response => (
+              NotificationManager.success("Envoie avec success", "", 3000),
+              window.setTimeout(() => {
+                NotificationManager.info("Merci pour votre visite")
+              }, 1500),
+              this.setState({
+               
+                contactname:'',
+            contactemail:'',
+            contactmobile:'',
+            contacttext:'',
+            disabled: true,
+              })
+            )
+          )
+          .catch(err =>
+            NotificationManager.error(
+              "Une erreur lors de l'envoi, essayer une autre fois",
+              ""
+            )
+          )
+      }
   render() {
   
     return (
@@ -54,8 +84,8 @@ class Contactreservation extends React.Component {
                 Nom et prénom
               </label>
               <input
-                value={this.state.fullname}
-                name="fullname"
+                value={this.state.contactname}
+                name="contactname"
                 onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterNameEx"
@@ -72,10 +102,10 @@ class Contactreservation extends React.Component {
                 E-mail
               </label>
               <input
-                value={this.state.email}
-                name="email"
+                value={this.state.contactemail}
+                name="contactemail"
                 onChange={this.changeHandler}
-                type="email"
+                type="contactemail"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
                 placeholder="Email"
@@ -92,12 +122,12 @@ class Contactreservation extends React.Component {
                 Téléphone
               </label>
               <input
-                value={this.state.telephone}
+                value={this.state.contactmobile}
                 onChange={this.handleNumbers}
                 type="text"
                 id="defaultFormRegisterConfirmEx3"
                 className="form-control"
-                name="telephone"
+                name="contactmobile"
                 placeholder="Your phone"
               />
             </MDBCol>
@@ -111,26 +141,28 @@ class Contactreservation extends React.Component {
               </label>
               <input
               disabled
-                value={this.state.message}
+                value={this.state.contacttext}
                 onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
                 className="form-control"
-                name="message"
-                placeholder="Taper votre message"
+                name="contacttext"
+                placeholder="Taper votre contacttext"
                 required
               />
             </MDBCol>
             
             </MDBRow>
         
-          <Link to={`/contact/${this.state.fullname}/${this.state.email}/${this.state.telephone}/${this.state.message}`}>
+          
            <MDBBtn color="primary"
              disabled={this.state.disabled} 
-           type="submit">
+             type="button"
+           onClick={this.sendmessagecontact}>
             Reserver
-          </MDBBtn></Link>
+          </MDBBtn>
         </form>
+        <NotificationContainer />  
       </div>
     );
   }

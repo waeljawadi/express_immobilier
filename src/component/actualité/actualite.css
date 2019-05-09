@@ -9,6 +9,14 @@ p.card-text.descriptionactu {
     font-size: 16px;
 }
 
+.hhhh{
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+
+
+}
+
 label.tag {
     position: relative;
     border: 1px solid #83bb4d;

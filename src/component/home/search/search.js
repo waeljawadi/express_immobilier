@@ -6,8 +6,8 @@ class Search extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      type : '',
-      surface_:''
+      type : ''
+      
     }
   }
 
@@ -49,7 +49,7 @@ this.setState({[event.target.name]: event.target.value})
 
           {/* <div className="col-lg-3 col-md-12 col-sm-12">
             <p className="txtline2">Surface en mètre carré:</p>
-            <select className="form-control" name="surface_" value={this.state.surface_} onChange={this.handlechange}>
+            <select className="form-control" name="surface_" value={this.state.surface} onChange={this.handlechange}>
               <option>Choisir la surface</option>
               <option>100 </option>
               <option>150 </option>

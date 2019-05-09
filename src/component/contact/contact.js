@@ -13,11 +13,16 @@ class Contact extends Component {
     
           this.state = { 
           
-            contactname:this.props.match.params.nom,
-            contactemail:this.props.match.params.email,
-            contactmobile:this.props.match.params.phone,
-            contacttext:this.props.match.params.message,
-            disabled: true,
+            // contactname:this.props.match.params.nom,
+            // contactemail:this.props.match.params.email,
+            // contactmobile:this.props.match.params.phone,
+            // contacttext:this.props.match.params.message,
+            // disabled: true,
+            contactname:'',
+            contactemail:'',
+            contactmobile:'',
+            contacttext:'',
+            disabled: true
            
                        }
     
@@ -46,7 +51,7 @@ class Contact extends Component {
           if (
             re.test(this.state.contactemail) &&
             this.state.contactname.length > 6 &&
-            (this.state.contactmobile.length) >=8 &&
+            this.state.contactmobile.length >=8  &&
             this.state.contacttext.length > 6
           ) {
             this.setState({ disabled: false })
